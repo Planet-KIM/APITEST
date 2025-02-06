@@ -1,0 +1,159 @@
+{
+  "title": "Examples",
+  "sections": [
+    {
+      "title": "Full Search",
+      "description": "Search for anything in the VarSome database.",
+      "examples": [
+        "macular degeneration",
+        "\"royal disease\"",
+        "article fish eye"
+      ],
+      "more_information": "More information..."
+    },
+    {
+      "title": "Formats accepted for variant, gene, transcript, position and region queries",
+      "formats": [
+        {
+          "type": "dbSNP rs id",
+          "description": "(rsNNN...N)",
+          "examples": [
+            "SNVs: rs746753722, rs145236923, rs117260922, rs376932266, rs113488022, rs1421085",
+            "Insertions: rs361923, rs35104581",
+            "Deletions: rs66500630, rs66698963"
+          ]
+        },
+        {
+          "type": "HGVS DNA-level variants",
+          "examples": [
+            "SNVs: CLN6(NM_017882):c.679G>A, GALNT12:c.907G>A, SORL1:c.808G>A, BRAF:c.1799T>G, TP53:c.559G>A",
+            "FTO:c.46-43098T>C (or NM_001080432:c.46-43098T>C οr FTO(NM_001080432):c.46-43098T>C)",
+            "Insertions: SYNGR1:c.607_608insACA, BRCA1:c.69_70insA",
+            "Deletions: BAIAP2L2:c.1322_1363del, FADS2:c.208-2713_208-2692del",
+            "Substitutions: TYR:c.1205_1206delGAinsAT or TYR:c.1205_1206delinsAT",
+            "Duplications: BRCA1:c.64_65dupTT"
+          ],
+          "notes": [
+            "Note: 'SYNGR1:c.607_608ins3' is not accepted",
+            "Note: 'NM_004006:c.1147_1149delGAG' is accepted but 'NM_004006:c.1147_1149del3' is not"
+          ]
+        },
+        {
+          "type": "HGVS single amino acid substitutions",
+          "examples": [
+            "CLN6 E227K or CLN6 Glu227Lys",
+            "GALNT12 D303N or GALNT12 p.Asp303Asn",
+            "TP53:R175L or TP53(NM_000546):R175L or NM_000546:R175L",
+            "BRAF:V600E or BRAF:p.V600E or BRAF:p.Val600Glu",
+            "BBS4:I354T or BBS4:p.Ile354Thr or NM_033028:I354T",
+            "NPPA:*152R, TP53:G187S, PIK3CA:H1047R"
+          ],
+          "note": "We do not accept protein insertions, deletions or frameshift variants, since they usually cannot be mapped to one or a few alternative genomic variants. All protein variants are converted into genomic variants, and only those affecting a single codon are considered; therefore a single amino acid substitution coming from alterations to more than one codon, or one that truncates the protein may not be mapped from your query to all possible genomic variants giving rise to it."
+        },
+        {
+          "type": "Chromosome—position—ref seq—variant seq",
+          "description": "Delimiters: any combination of spaces, dashes (-) and colons (:), chromosomes starting with 'chr' or without",
+          "examples": [
+            "SNPs: 15:68500735:A:T (or chr15-68500735-A-T), 15-73027478-T-C (or chr15:73027478:T:C or chr15 73027478 T C), chr6-161127501-T-G (or 6:161127501:T:G or 6 161127501 T G), 11-89017961-T-A, chrX:138643751:A:T",
+            "Insertion: chr22:39777823::CAA (or 22-39777823--CAA or chr22-39777823-T-CCAA)",
+            "Deletion: 5:156479558:TAAAGCACTAAGACC: (or chr5:156479558:TAAAGCACTAAGACC:)"
+          ]
+        },
+        {
+          "type": "Chromosome—position—ref_seq_length—variant_seq",
+          "description": "ref_seq_length: number of reference bases that the variant allele replaces",
+          "examples": [
+            "SNP ('1' as third place): 15-73027478-1-C (or chr15:73027478:1:C or 15 73027478 1 C), chr6-161127501-1-G (or 6:161127501:1:G or 6 161127501 1 G), 11-89017961-1-A",
+            "Insertion ('0' as third place): 22:39777823:0:CAA (or chr22:39777823-0-CAA or chr22 39777823 0 CAA)",
+            "Deletion (number of bp deleted in third place): chr22:38482353:42: or 22-38482353-42- or 22 38482353 42"
+          ]
+        },
+        {
+          "type": "Line from your VCF",
+          "examples": [
+            "chr2  45944181  . AAGATGAGATGAGAT AAGATGAGAT  12.7101 FAIL  AC1=2;AF1=1;DP=1;DP4=0,0,0,1;FQ=-37.5258;IDV=1;IMF=1;INDEL;MQ=50;MQ0F=0;SGB=-0.379885 GT:PL 1/1:50,3,0"
+          ]
+        },
+        {
+          "type": "COSMIC id",
+          "examples": ["COSV54347687", "COSM4986760"]
+        },
+        {
+          "type": "Transcript or genomic position",
+          "examples": ["HAVCR1:c.487", "5:156479558", "chr5-156479558"]
+        },
+        {
+          "type": "Genomic region",
+          "examples": ["chr5:156479372..156479666"]
+        },
+        {
+          "type": "Gene symbol or identifier",
+          "examples": ["BRAF", "EGFR", "BRCA1", "HGNC:1097", "ENTREZ:1956", "UNIPROT:B7ZA85"]
+        },
+        {
+          "type": "Transcript identifier",
+          "examples": ["NM_002482", "ENST00000586385"]
+        },
+        {
+          "type": "CNVs",
+          "description": "In VarSome, CNVs are encoded in a colon separated, four field format:\n<chromosome>:<start coordinate>:<L|E><end coordinate>:<DUP|DEL>",
+          "fields": [
+            "Field 1 - chromosome: chromosome in UCSC format, for example 'chr1', 'chr9', 'chrX', etc.",
+            "Field 2 - start coordinate: genomic coordinate denoting the start position of the CNV.",
+            "Field 3 - end coordinate/length: If preceded by 'E' or 'e' (end), the coordinate denotes the end position of the CNV. If preceded by an 'L' or 'l' (length), then it denotes the length of the CNV. If there is no preceding flag, then 'E' is implied.",
+            "Field 4 - copy number variation type. Value can be 'DUP' for duplications or 'DEL' for deletions."
+          ],
+          "examples": [
+            {
+              "reference_genome": "hg19",
+              "variants": [
+                {
+                  "cnv": "chr7:117138367:117159446:DEL",
+                  "description": "A Pathogenic 21,079bp long deletion spanning exons 1 and 2 of CFTR"
+                },
+                {
+                  "cnv": "chr3:37039445:37059613:DUP",
+                  "description": "A 20,168 Likely Pathogenic duplication spanning exons 3-10 of MLH1"
+                },
+                {
+                  "cnv": "chr21:36160098:36171759:DEL",
+                  "description": "A 11,661 Pathogenic deletion spanning the final two exons of the RUNX1 transcript"
+                },
+                {
+                  "cnv": "chr1:110230496:110235917:DUP",
+                  "description": "A 5,421 Benign duplication spanning genes GSTM1 and GSTM2"
+                },
+                {
+                  "cnv": "chr2:97854824:97855027:DUP",
+                  "description": "A 203bp duplication of Uncertain Significance spanning parts of exons 33 and 34 of ANKRD3"
+                }
+              ]
+            },
+            {
+              "reference_genome": "hg38",
+              "variants": [
+                {
+                  "cnv": "chr1:13308329:13308887:DEL",
+                  "description": "A 558bp Benign deletion of large part of exon 4 of PRAMEF4"
+                },
+                {
+                  "cnv": "chr13:32317656:32331987:DUP",
+                  "description": "A 4,331bp Likely Pathogenic duplication of exon 3 of BRCA2"
+                },
+                {
+                  "cnv": "8:127734450:127764981:DUP",
+                  "description": "A 30,531bp duplication of Uncertain Significance spanning MYC"
+                },
+                {
+                  "cnv": "chr1:13308329:13308887:DEL",
+                  "description": "A 558bp Benign deletion of large part of exon 4 of PRAMEF4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "Note: We do not accept protein insertions, deletions or frameshift variants, since they usually cannot be mapped to one or a few alternative genomic variants. All protein variants are converted into genomic variants, and only those affecting a single codon are considered; therefore a single amino acid substitution coming from alterations to more than one codon, or one that truncates the protein may not be mapped from your query to all possible genomic variants giving rise to it."
+}

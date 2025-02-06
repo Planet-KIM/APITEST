@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Variant 입력</title>
+    <script>
+        function toggleOptions(api) {
+            var optionsDiv = document.getElementById('options-' + api);
+            if (document.getElementById('api-' + api).checked) {
+                optionsDiv.style.display = 'block';
+            } else {
+                optionsDiv.style.display = 'none';
+                // 옵션 라디오 버튼 초기화
+                var radios = optionsDiv.querySelectorAll('input[type="radio"]');
+                radios.forEach(function(radio) {
+                    if (radio.defaultChecked) {
+                        radio.checked = true;
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Variant 분석기</h1>
+    <form action="/variant" method="post">
+        <label for="variant">Variant:</label>
+        <input type="text" id="variant" name="variant" required><br><br>
+
+        <label>APIs 선택:</label><br>
+        {% for api in api_list %}
+            <input type="checkbox" name="apis" value="{{ api }}" id="api-{{ api }}" onchange="toggleOptions('{{ api }}')"> {{ api }}<br>
+            {% if api in api_options %}
+                <div id="options-{{ api }}" style="margin-left:20px; display:none;">
+                    {% if api == 'asoamenable' %}
+                        <div>
+                            <p>■ Experimental evidence of complete loss of protein-coding function</p>
+                            <label>
+                                <input type="radio" name="options-{{ api }}-clf" value="true" checked> No or unknown
+                            </label>
+                            <label>
+                                <input type="radio" name="options-{{ api }}-clf" value="false"> Yes
+                            </label>
+                        </div>
+                        <div>
+                            <p>■ Experimental evidence of a splice site gain</p>
+                            <label>
+                                <input type="radio" name="options-{{ api }}-ssg" value="true" checked> No or unknown
+                            </label>
+                            <label>
+                                <input type="radio" name="options-{{ api }}-ssg" value="false"> Yes
+                            </label>
+                        </div>
+                    {% else %}
+                        <!-- 다른 API의 옵션이 있다면 여기에 추가 -->
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        <br>
+        <input type="submit" value="분석 시작">
+    </form>
+</body>
+</html>

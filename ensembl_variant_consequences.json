@@ -1,0 +1,330 @@
+[
+    {
+      "so_term": "transcript_ablation",
+      "so_description": "A feature ablation whereby the deleted region includes a transcript feature",
+      "so_accession": "SO:0001893",
+      "display_term": "Transcript ablation",
+      "impact": "HIGH",
+      "color": "#ff0000"
+    },
+    {
+      "so_term": "splice_acceptor_variant",
+      "so_description": "A splice variant that changes the 2 base region at the 3' end of an intron",
+      "so_accession": "SO:0001574",
+      "display_term": "Splice acceptor variant",
+      "impact": "HIGH",
+      "color": "#FF581A"
+    },
+    {
+      "so_term": "splice_donor_variant",
+      "so_description": "A splice variant that changes the 2 base region at the 5' end of an intron",
+      "so_accession": "SO:0001575",
+      "display_term": "Splice donor variant",
+      "impact": "HIGH",
+      "color": "#FF581A"
+    },
+    {
+      "so_term": "stop_gained",
+      "so_description": "A sequence variant whereby at least one base of a codon is changed, resulting in a premature stop codon, leading to a shortened transcript",
+      "so_accession": "SO:0001587",
+      "display_term": "Stop gained",
+      "impact": "HIGH",
+      "color": "#ff0000"
+    },
+    {
+      "so_term": "frameshift_variant",
+      "so_description": "A sequence variant which causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three",
+      "so_accession": "SO:0001589",
+      "display_term": "Frameshift variant",
+      "impact": "HIGH",
+      "color": "#9400D3"
+    },
+    {
+      "so_term": "stop_lost",
+      "so_description": "A sequence variant where at least one base of the terminator codon (stop) is changed, resulting in an elongated transcript",
+      "so_accession": "SO:0001578",
+      "display_term": "Stop lost",
+      "impact": "HIGH",
+      "color": "#ff0000"
+    },
+    {
+      "so_term": "start_lost",
+      "so_description": "A codon variant that changes at least one base of the canonical start codon",
+      "so_accession": "SO:0002012",
+      "display_term": "Start lost",
+      "impact": "HIGH",
+      "color": "#ffd700"
+    },
+    {
+      "so_term": "transcript_amplification",
+      "so_description": "A feature amplification of a region containing a transcript",
+      "so_accession": "SO:0001889",
+      "display_term": "Transcript amplification",
+      "impact": "HIGH",
+      "color": "#ff69b4"
+    },
+    {
+      "so_term": "feature_elongation",
+      "so_description": "A sequence variant that causes the extension of a genomic feature, with regard to the reference sequence",
+      "so_accession": "SO:0001907",
+      "display_term": "Feature elongation",
+      "impact": "HIGH",
+      "color": "#7f7f7f"
+    },
+    {
+      "so_term": "feature_truncation",
+      "so_description": "A sequence variant that causes the reduction of a genomic feature, with regard to the reference sequence",
+      "so_accession": "SO:0001906",
+      "display_term": "Feature truncation",
+      "impact": "HIGH",
+      "color": "#7f7f7f"
+    },
+    {
+      "so_term": "inframe_insertion",
+      "so_description": "An inframe non synonymous variant that inserts bases into in the coding sequence",
+      "so_accession": "SO:0001821",
+      "display_term": "Inframe insertion",
+      "impact": "MODERATE",
+      "color": "#ff69b4"
+    },
+    {
+      "so_term": "inframe_deletion",
+      "so_description": "An inframe non synonymous variant that deletes bases from the coding sequence",
+      "so_accession": "SO:0001822",
+      "display_term": "Inframe deletion",
+      "impact": "MODERATE",
+      "color": "#ff69b4"
+    },
+    {
+      "so_term": "missense_variant",
+      "so_description": "A sequence variant, that changes one or more bases, resulting in a different amino acid sequence but where the length is preserved",
+      "so_accession": "SO:0001583",
+      "display_term": "Missense variant",
+      "impact": "MODERATE",
+      "color": "#ffd700"
+    },
+    {
+      "so_term": "protein_altering_variant",
+      "so_description": "A sequence_variant which is predicted to change the protein encoded in the coding sequence",
+      "so_accession": "SO:0001818",
+      "display_term": "Protein altering variant",
+      "impact": "MODERATE",
+      "color": "#FF0080"
+    },
+    {
+      "so_term": "splice_donor_5th_base_variant",
+      "so_description": "A sequence variant that causes a change at the 5th base pair after the start of the intron in the orientation of the transcript",
+      "so_accession": "SO:0001787",
+      "display_term": "Splice donor 5th base variant",
+      "impact": "LOW",
+      "color": "#ff7f50"
+    },
+    {
+      "so_term": "splice_region_variant",
+      "so_description": "A sequence variant in which a change has occurred within the region of the splice site, either within 1-3 bases of the exon or 3-8 bases of the intron",
+      "so_accession": "SO:0001630",
+      "display_term": "Splice region variant",
+      "impact": "LOW",
+      "color": "#ff7f50"
+    },
+    {
+      "so_term": "splice_donor_region_variant",
+      "so_description": "A sequence variant that falls in the region between the 3rd and 6th base after splice junction (5' end of intron)",
+      "so_accession": "SO:0002170",
+      "display_term": "Splice donor region variant",
+      "impact": "LOW",
+      "color": "#ff7f50"
+    },
+    {
+      "so_term": "splice_polypyrimidine_tract_variant",
+      "so_description": "A sequence variant that falls in the polypyrimidine tract at 3' end of intron between 17 and 3 bases from the end (acceptor -3 to acceptor -17)",
+      "so_accession": "SO:0002169",
+      "display_term": "Splice polypyrimidine tract variant",
+      "impact": "LOW",
+      "color": "#ff7f50"
+    },
+    {
+      "so_term": "incomplete_terminal_codon_variant",
+      "so_description": "A sequence variant where at least one base of the final codon of an incompletely annotated transcript is changed",
+      "so_accession": "SO:0001626",
+      "display_term": "Incomplete terminal codon variant",
+      "impact": "LOW",
+      "color": "#ff00ff"
+    },
+    {
+      "so_term": "start_retained_variant",
+      "so_description": "A sequence variant where at least one base in the start codon is changed, but the start remains",
+      "so_accession": "SO:0002019",
+      "display_term": "Start retained variant",
+      "impact": "LOW",
+      "color": "#76ee00"
+    },
+    {
+      "so_term": "stop_retained_variant",
+      "so_description": "A sequence variant where at least one base in the terminator codon is changed, but the terminator remains",
+      "so_accession": "SO:0001567",
+      "display_term": "Stop retained variant",
+      "impact": "LOW",
+      "color": "#76ee00"
+    },
+    {
+      "so_term": "synonymous_variant",
+      "so_description": "A sequence variant where there is no resulting change to the encoded amino acid",
+      "so_accession": "SO:0001819",
+      "display_term": "Synonymous variant",
+      "impact": "LOW",
+      "color": "#76ee00"
+    },
+    {
+      "so_term": "coding_sequence_variant",
+      "so_description": "A sequence variant that changes the coding sequence",
+      "so_accession": "SO:0001580",
+      "display_term": "Coding sequence variant",
+      "impact": "MODIFIER",
+      "color": "#458b00"
+    },
+    {
+      "so_term": "mature_miRNA_variant",
+      "so_description": "A transcript variant located with the sequence of the mature miRNA",
+      "so_accession": "SO:0001620",
+      "display_term": "Mature miRNA variant",
+      "impact": "MODIFIER",
+      "color": "#458b00"
+    },
+    {
+      "so_term": "5_prime_UTR_variant",
+      "so_description": "A UTR variant of the 5' UTR",
+      "so_accession": "SO:0001623",
+      "display_term": "5 prime UTR variant",
+      "impact": "MODIFIER",
+      "color": "#7ac5cd"
+    },
+    {
+      "so_term": "3_prime_UTR_variant",
+      "so_description": "A UTR variant of the 3' UTR",
+      "so_accession": "SO:0001624",
+      "display_term": "3 prime UTR variant",
+      "impact": "MODIFIER",
+      "color": "#7ac5cd"
+    },
+    {
+      "so_term": "non_coding_transcript_exon_variant",
+      "so_description": "A sequence variant that changes non-coding exon sequence in a non-coding transcript",
+      "so_accession": "SO:0001792",
+      "display_term": "Non coding transcript exon variant",
+      "impact": "MODIFIER",
+      "color": "#32cd32"
+    },
+    {
+      "so_term": "intron_variant",
+      "so_description": "A transcript variant occurring within an intron",
+      "so_accession": "SO:0001627",
+      "display_term": "Intron variant",
+      "impact": "MODIFIER",
+      "color": "#02599c"
+    },
+    {
+      "so_term": "NMD_transcript_variant",
+      "so_description": "A variant in a transcript that is the target of NMD",
+      "so_accession": "SO:0001621",
+      "display_term": "NMD transcript variant",
+      "impact": "MODIFIER",
+      "color": "#ff4500"
+    },
+    {
+      "so_term": "non_coding_transcript_variant",
+      "so_description": "A transcript variant of a non coding RNA gene",
+      "so_accession": "SO:0001619",
+      "display_term": "Non coding transcript variant",
+      "impact": "MODIFIER",
+      "color": "#32cd32"
+    },
+    {
+      "so_term": "coding_transcript_variant",
+      "so_description": "A transcript variant of a protein coding gene",
+      "so_accession": "SO:0001968",
+      "display_term": "Coding transcript variant",
+      "impact": "MODIFIER",
+      "color": "#458b00"
+    },
+    {
+      "so_term": "upstream_gene_variant",
+      "so_description": "A sequence variant located 5' of a gene",
+      "so_accession": "SO:0001631",
+      "display_term": "Upstream gene variant",
+      "impact": "MODIFIER",
+      "color": "#a2b5cd"
+    },
+    {
+      "so_term": "downstream_gene_variant",
+      "so_description": "A sequence variant located 3' of a gene",
+      "so_accession": "SO:0001632",
+      "display_term": "Downstream gene variant",
+      "impact": "MODIFIER",
+      "color": "#a2b5cd"
+    },
+    {
+      "so_term": "TFBS_ablation",
+      "so_description": "A feature ablation whereby the deleted region includes a transcription factor binding site",
+      "so_accession": "SO:0001895",
+      "display_term": "TFBS ablation",
+      "impact": "MODIFIER",
+      "color": "#a52a2a"
+    },
+    {
+      "so_term": "TFBS_amplification",
+      "so_description": "A feature amplification of a region containing a transcription factor binding site",
+      "so_accession": "SO:0001892",
+      "display_term": "TFBS amplification",
+      "impact": "MODIFIER",
+      "color": "#a52a2a"
+    },
+    {
+      "so_term": "TF_binding_site_variant",
+      "so_description": "A sequence variant located within a transcription factor binding site",
+      "so_accession": "SO:0001782",
+      "display_term": "TF binding site variant",
+      "impact": "MODIFIER",
+      "color": "#a52a2a"
+    },
+    {
+      "so_term": "regulatory_region_ablation",
+      "so_description": "A feature ablation whereby the deleted region includes a regulatory region",
+      "so_accession": "SO:0001894",
+      "display_term": "Regulatory region ablation",
+      "impact": "MODIFIER",
+      "color": "#a52a2a"
+    },
+    {
+      "so_term": "regulatory_region_amplification",
+      "so_description": "A feature amplification of a region containing a regulatory region",
+      "so_accession": "SO:0001891",
+      "display_term": "Regulatory region amplification",
+      "impact": "MODIFIER",
+      "color": "#a52a2a"
+    },
+    {
+      "so_term": "regulatory_region_variant",
+      "so_description": "A sequence variant located within a regulatory region",
+      "so_accession": "SO:0001566",
+      "display_term": "Regulatory region variant",
+      "impact": "MODIFIER",
+      "color": "#a52a2a"
+    },
+    {
+      "so_term": "intergenic_variant",
+      "so_description": "A sequence variant located in the intergenic region, between genes",
+      "so_accession": "SO:0001628",
+      "display_term": "Intergenic variant",
+      "impact": "MODIFIER",
+      "color": "#636363"
+    },
+    {
+      "so_term": "sequence_variant",
+      "so_description": "A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration",
+      "so_accession": "SO:0001060",
+      "display_term": "Sequence variant",
+      "impact": "MODIFIER",
+      "color": "#636363"
+    }
+  ]

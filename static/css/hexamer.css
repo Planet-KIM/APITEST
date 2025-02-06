@@ -1,0 +1,112 @@
+.hexamer-baseaxes {
+    /*width: calc(100% - 40px);
+    height: 100px;*/
+
+}
+
+.hexamer-figure{
+    padding: 5px;
+    overflow: scroll;
+    /*margin: 10px 50px 10px 50px;
+    min-width: calc(100% - 100px);
+    max-width: calc(100% - 40px);*/
+    width: 100%;
+    height: 100%;
+}
+
+.hexamer-clip rect {
+    width: calc(100% - 40px);
+    height: 100px;
+}
+
+.hexamer-axes {
+    pointer-events: visiblefill;
+}
+
+.hexamer-axesbg {
+   width: calc(100% - 40px);
+   height: 100px;
+   fill: rgb(255, 255, 255);
+}
+
+.hexamer-paths-container{
+    width: calc(100% - 40px);
+    height: 100px;
+}
+
+.hexamer-text {
+    text-anchor: start;
+    dominant-baseline: auto;
+    font-size: 12px;
+    opacity: 1;
+    cursor: pointer;   
+}
+
+
+.hexamer-yaxis{
+    fill: none;
+    font-size: 10px;
+    font-family: sans-serif;
+    text-anchor: end;
+}
+
+.hexamer-xaxis .tick {
+    opacity: 1;
+}
+
+.hexamer-yaxis .tick {
+    opacity: 1;
+}
+
+.hexamer-xaxis{
+    fill: none;
+    font-size: 10px;
+    font-family: sans-serif;
+    text-anchor: middle;
+}
+
+.hexamer-title-top {
+    text-anchor: middle;
+    dominant-baseline: auto;
+    font-size: 13px;
+    fill: rgb(0, 0, 0);
+    opacity: 1
+}
+
+.hexamer-title-left {
+    text-anchor: middle;
+    dominant-baseline: auto;
+    font-size: 13px;
+    fill: rgb(0, 0, 0); 
+    opacity: 1;
+}
+
+.hexamer-text tspan {
+    position: absolute;
+    width: 120px;
+    background: black;
+    color: white;
+    padding: 5px 0;
+    text-align: center;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    opacity: 0;
+    transition: 0.6s opacity;
+}
+
+.hexamer-text tspan:before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: -5px;
+    background: black;
+    z-index: -1;
+    left: 50px;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.hexamer-text:hover > tspan{
+    opacity: 1;
+}

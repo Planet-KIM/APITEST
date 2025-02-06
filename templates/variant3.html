@@ -1,0 +1,111 @@
+<!-- templates/variant.html -->
+{% extends "base.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tooltip.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="main-body">
+    <!-- 기존 폼은 그대로 유지 -->
+    <!-- ... -->
+</div>
+
+<!-- 결과를 표시하는 영역 -->
+<div id="results">
+    <!-- 각 API의 결과 카드가 동적으로 추가됩니다 -->
+</div>
+{% endblock %}
+
+{% block javascript1 %}
+<script>
+    var variant = {{ variant|tojson }};
+    var apis = {{ apis|tojson }};
+    var options = {{ options|tojson }};
+
+    const apiList = apis.split(',');
+    console.log(apiList);
+
+    // 결과 영역에 각 API에 대한 플레이스홀더와 로딩 인디케이터를 초기화합니다.
+    const resultsDiv = document.getElementById('results');
+
+    apiList.forEach(function(api) {
+        const apiDiv = document.createElement('div');
+        apiDiv.id = 'api-' + api;
+        apiDiv.className = 'card';
+        apiDiv.style = 'margin: 20px;';
+
+        const cardHeader = document.createElement('div');
+        cardHeader.className = 'card-header';
+        cardHeader.innerHTML = '<h5>' + api + '</h5>';
+
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+        cardBody.id = 'chart_body_' + api;
+        cardBody.innerHTML = '<div class="spinner"></div><span> 진행 중...</span>';
+
+        apiDiv.appendChild(cardHeader);
+        apiDiv.appendChild(cardBody);
+        resultsDiv.appendChild(apiDiv);
+    });
+
+    // SSE 연결 시작
+    const encodedVariant = encodeURIComponent(variant);
+    const encodedApis = encodeURIComponent(apis);
+    const encodedOptions = encodeURIComponent(options);
+
+    const eventSource = new EventSource(`/stream?variant=${encodedVariant}&apis=${encodedApis}&options=${encodedOptions}`);
+
+    eventSource.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        const api = data.route;
+        const response = data.response;
+
+        // 로딩 인디케이터 제거
+        const cardBody = document.getElementById('chart_body_' + api);
+        if (cardBody) {
+            cardBody.innerHTML = '';
+        }
+
+        // cardid와 convid 설정
+        let cardid, convid;
+        if (api === 'split2vcf') {
+            cardid = "#chart_body_ensembl,#chart_body_refseq";
+            convid = "#convtable_ensembl,#convtable_refseq";
+        } else if (api === 'spliceai' || api === 'maxentscan') {
+            cardid = "#chart_body_" + api + "_plus,#chart_body_" + api + "_minus";
+            convid = "#convtable_" + api + "_plus,#convtable_" + api + "_minus";
+        } else if (api === 'asoamenable') {
+            cardid = "#chart_body_" + api + "_result_plus,#chart_body_" + api + "_detail_plus,#chart_body_" + api + "_result_minus,#chart_body_" + api + "_detail_minus";
+            convid = "#convtable_" + api + "_result_plus,#convtable_" + api + "_detail_plus,#convtable_" + api + "_result_minus,#convtable_" + api + "_detail_minus";
+        } else {
+            cardid = "#chart_body_" + api;
+            convid = "#convtable_" + api;
+        }
+
+        console.log('cardid:', cardid);
+        console.log('convid:', convid);
+
+        // 해당 API의 처리 함수 호출
+        const funcName = api + '_run';
+        if (typeof window[funcName] === 'function') {
+            window[funcName](response, cardid, convid);
+        } else {
+            console.error('No function found for API:', api);
+            // 기본 처리
+            renderDefault(api, response, cardid);
+        }
+    };
+
+    eventSource.onerror = function(e) {
+        console.error("SSE 연결 오류:", e);
+        eventSource.close();
+    };
+
+    function renderDefault(api, response, cardid) {
+        // 기본적으로 JSON 형태로 결과를 표시
+        document.querySelector(cardid).innerHTML = '<pre>' + JSON.stringify(response, null, 2) + '</pre>';
+    }
+
+</script>
+{% endblock %}

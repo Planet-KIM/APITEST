@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Variant 결과</title>
+    <style>
+        /* 로딩 스피너 스타일 */
+        .spinner {
+            border: 4px solid #f3f3f3; /* 연한 회색 */
+            border-top: 4px solid #3498db; /* 파란색 */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .api-result {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Variant 분석 결과</h1>
+    <div id="results">
+        <!-- 각 API의 결과가 여기 표시됩니다 -->
+    </div>
+
+    <script type="text/javascript">
+        var variant = {{ variant|tojson }};
+        var apis = {{ apis|tojson }};
+        var options = {{ options|tojson }};
+
+        const apiList = apis.split(',');
+
+        // 결과 영역에 각 API에 대한 플레이스홀더와 로딩 인디케이터를 초기화합니다.
+        const resultsDiv = document.getElementById('results');
+
+        apiList.forEach(function(api) {
+            const apiDiv = document.createElement('div');
+            apiDiv.id = 'api-' + api;
+            apiDiv.className = 'api-result';
+
+            const apiTitle = document.createElement('h2');
+            apiTitle.textContent = api;
+
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.className = 'spinner';
+            loadingIndicator.id = 'loading-' + api;
+
+            const statusText = document.createElement('span');
+            statusText.id = 'status-' + api;
+            statusText.textContent = ' 진행 중...';
+
+            apiDiv.appendChild(apiTitle);
+            apiDiv.appendChild(loadingIndicator);
+            apiDiv.appendChild(statusText);
+
+            resultsDiv.appendChild(apiDiv);
+        });
+
+        // SSE 연결 시작
+        const encodedVariant = encodeURIComponent(variant);
+        const encodedApis = encodeURIComponent(apis);
+        const encodedOptions = encodeURIComponent(options);
+
+        const eventSource = new EventSource(`/stream?variant=${encodedVariant}&apis=${encodedApis}&options=${encodedOptions}`);
+
+        eventSource.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            const api = data.route;
+            const response = data.response;
+
+            // 로딩 인디케이터 및 상태 텍스트 제거
+            const loadingIndicator = document.getElementById('loading-' + api);
+            if (loadingIndicator) {
+                loadingIndicator.remove();
+            }
+
+            const statusText = document.getElementById('status-' + api);
+            if (statusText) {
+                statusText.remove();
+            }
+
+            // route에 따라 다른 렌더링 함수 호출
+            switch(api) {
+                case 'vep':
+                    renderVep(response);
+                    break;
+                case 'spliceai':
+                    renderSpliceAI(response);
+                    break;
+                case 'gnomad':
+                    renderGnomad(response);
+                    break;
+                case 'asoamenable':
+                    renderAsoAmenable(response);
+                    break;
+                // 다른 route들에 대한 케이스 추가
+                default:
+                    renderDefault(api, response);
+            }
+        };
+
+        eventSource.onerror = function(e) {
+            console.error("SSE 연결 오류:", e);
+            eventSource.close();
+        };
+
+        // 각 route에 대한 렌더링 함수 정의
+        function renderVep(response) {
+            const apiDiv = document.getElementById('api-vep');
+            // VEP 결과를 표시하는 코드 작성
+            apiDiv.innerHTML += `<pre>${formatVepResponse(response)}</pre>`;
+        }
+
+        function renderSpliceAI(response) {
+            const apiDiv = document.getElementById('api-spliceai');
+            // SpliceAI 결과를 표시하는 코드 작성
+            apiDiv.innerHTML += `<pre>${formatSpliceAIResponse(response)}</pre>`;
+        }
+
+        function renderGnomad(response) {
+            const apiDiv = document.getElementById('api-gnomad');
+            // gnomAD 결과를 표시하는 코드 작성
+            apiDiv.innerHTML += `<pre>${formatGnomadResponse(response)}</pre>`;
+        }
+
+        function renderAsoAmenable(response) {
+            const apiDiv = document.getElementById('api-asoamenable');
+            // AsoAmenable 결과를 표시하는 코드 작성
+            apiDiv.innerHTML += `<pre>${formatAsoAmenableResponse(response)}</pre>`;
+        }
+
+        function renderDefault(api, response) {
+            const apiDiv = document.getElementById('api-' + api);
+            // 기본적으로 JSON 형태로 결과를 표시
+            const pre = document.createElement('pre');
+            pre.textContent = JSON.stringify(response, null, 2);
+            apiDiv.appendChild(pre);
+        }
+
+        // 결과 포맷팅 함수들 정의 (예시)
+        function formatVepResponse(response) {
+            // VEP 결과를 읽기 쉽게 포맷팅
+            // 예시 코드
+            return JSON.stringify(response, null, 2);
+        }
+
+        function formatSpliceAIResponse(response) {
+            // SpliceAI 결과를 읽기 쉽게 포맷팅
+            // 예시 코드
+            return JSON.stringify(response, null, 2);
+        }
+
+        function formatGnomadResponse(response) {
+            // gnomAD 결과를 읽기 쉽게 포맷팅
+            return JSON.stringify(response, null, 2);
+        }
+
+        function formatAsoAmenableResponse(response) {
+            // AsoAmenable 결과를 읽기 쉽게 포맷팅
+            return JSON.stringify(response, null, 2);
+        }
+    </script>
+</body>
+</html>

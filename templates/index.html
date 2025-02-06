@@ -1,0 +1,75 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ data.title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1, h2, h3 { color: #333; }
+        ul { list-style-type: none; padding-left: 0; }
+        li { margin-bottom: 10px; }
+        .note { background-color: #f9f9f9; padding: 10px; border-left: 4px solid #ccc; }
+        .format-type { font-weight: bold; }
+        .examples { margin-left: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>{{ data.title }}</h1>
+
+    {% for section in data.sections %}
+        <h2>{{ section.title }}</h2>
+        {% if section.description %}
+            <p>{{ section.description }}</p>
+        {% endif %}
+
+        {% if section.examples %}
+            <h3>예시:</h3>
+            <ul>
+                {% for example in section.examples %}
+                    <li>{{ example }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if section.more_information %}
+            <p><a href="#">{{ section.more_information }}</a></p>
+        {% endif %}
+
+        {% if section.formats %}
+            {% for format in section.formats %}
+                <div>
+                    <h3>{{ format.type }} {% if format.description %}<span>({{ format.description }})</span>{% endif %}</h3>
+                    {% if format.examples %}
+                        <ul class="examples">
+                            {% for example in format.examples %}
+                                <li>{{ example }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% if format.notes %}
+                        <div class="note">
+                            {% for note in format.notes %}
+                                <p>{{ note }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% if format.note %}
+                        <div class="note">
+                            <p>{{ format.note }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+
+    {% if data.note %}
+        <div class="note">
+            <p>{{ data.note }}</p>
+        </div>
+    {% endif %}
+
+</body>
+</html>

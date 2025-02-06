@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTables with Chart.js</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div style="text-align: center;">
+        <h2 style="margin-bottom: 10px;">Publication Count by Year</h2>
+        <canvas id="yearChart" width="600px" height="200px"></canvas>
+    </div>
+
+    <h2 style="margin-top: 30px;">Research Articles</h2>
+    <table id="dataTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>PMID</th>
+                <th>PMCID</th>
+                <th>Title</th>
+                <th>Journal</th>
+                <th>Authors</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            // JSON 데이터 로드
+            $.getJSON("./test.json", function(data) {
+                if (data.length === 0) {
+                    alert("No data available");
+                    return;
+                }
+
+                // === 연도별 개수 계산 ===
+                let yearCounts = {};
+                data.forEach(item => {
+                    let year = item.year;
+                    if (year) {
+                        yearCounts[year] = (yearCounts[year] || 0) + 1;
+                    }
+                });
+
+                // 연도 정렬 및 데이터 준비
+                let sortedYears = Object.keys(yearCounts).sort((a, b) => a - b);
+                let counts = sortedYears.map(year => yearCounts[year]);
+
+                // === Chart.js 그래프 생성 ===
+                let ctx = document.getElementById("yearChart").getContext("2d");
+                new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: sortedYears,
+                        datasets: [{
+                            label: "Publication Count",
+                            data: counts,
+                            backgroundColor: "rgba(75, 192, 192, 0.6)",
+                            borderColor: "rgba(75, 192, 192, 1)",
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        //maintainAspectRatio: false,
+                        //aspectRatio: 2,  // 👈 가로가 넓고 세로가 낮도록 조정
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    stepSize: 1,
+                                    precision: 0
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // === DataTables 데이터 준비 ===
+                let tableData = data.map(item => [
+                    item.pmid || "N/A",
+                    item.pmcid || "N/A",
+                    item.title || "No Title",
+                    item.journal || "No Journal",
+                    item.authors ? item.authors.join(", ") : "No Authors",
+                    item.year || "N/A"
+                ]);
+
+                // DataTable 적용
+                $('#dataTable').DataTable({
+                    data: tableData,
+                    columns: [
+                        { title: "PMID" },
+                        { title: "PMCID" },
+                        { title: "Title" },
+                        { title: "Journal" },
+                        { title: "Authors" },
+                        { title: "Year" }
+                    ]
+                });
+
+            }).fail(function() {
+                alert("Failed to load data.");
+            });
+        });
+    </script>
+
+</body>
+</html>

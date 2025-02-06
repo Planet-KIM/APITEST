@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VarSome Input Format Guide</title>
+    <!-- Bootstrap CSS (without integrity attribute) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .content-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .card-custom {
+            width: 12rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card-header {
+            background: linear-gradient(135deg, #007bff, #00c3ff);
+            color: white;
+            font-weight: bold;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            text-align: center;
+            padding: 10px;
+        }
+        .card-body {
+            background-color: #f4f9ff;
+            color: #333;
+            padding: 15px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            text-align: center;
+        }
+        .show-more, .show-less {
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        /* Collapsible content with transition */
+        .collapsible-content {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container content-container">
+        <!-- Title -->
+        <h1 class="text-center mb-4">VarSome Input Format Guide</h1>
+        
+        <!-- Card Links for Different Sections -->
+        <div class="card-container">
+            <!-- DBsnp RSID Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('dbsnp-rsid')">
+                <div class="card-header">Dbsnp RSID</div>
+                <div class="card-body">
+                    <p class="card-text">rs746753722, rs145236923</p>
+                </div>
+            </div>
+            <!-- HGVS DNA-level Variants Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('hgvs-dna')">
+                <div class="card-header">HGVS DNA-level</div>
+                <div class="card-body">
+                    <p class="card-text">CLN6(NM_017882):c.679G>A, GALNT12:c.907G>A</p>
+                </div>
+            </div>
+            <!-- HGVS Single Amino Acid Substitutions Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('hgvs-aa')">
+                <div class="card-header">HGVS Amino Acid</div>
+                <div class="card-body">
+                    <p class="card-text">CLN6 E227K, GALNT12 D303N</p>
+                </div>
+            </div>
+            <!-- Chromosome-Position-Ref Seq-Variant Seq Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('chrom-pos-ref-var')">
+                <div class="card-header">Chromosome-Position</div>
+                <div class="card-body">
+                    <p class="card-text">15:68500735:A:T</p>
+                </div>
+            </div>
+            <!-- Chromosome-Position-Ref Seq Length-Variant Seq Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('chrom-pos-ref-len-var')">
+                <div class="card-header">Chromosome-Position (Length)</div>
+                <div class="card-body">
+                    <p class="card-text">15-73027478-1-C</p>
+                </div>
+            </div>
+            <!-- VCF Format Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('vcf-format')">
+                <div class="card-header">VCF Format</div>
+                <div class="card-body">
+                    <p class="card-text">chr2 45944181 . AAGATGAGATGAGAT AAGATGAGAT</p>
+                </div>
+            </div>
+            <!-- COSMIC ID Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('cosmic-id')">
+                <div class="card-header">COSMIC ID</div>
+                <div class="card-body">
+                    <p class="card-text">COSV54347687, COSM4986760</p>
+                </div>
+            </div>
+            <!-- Transcript or Genomic Position Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('transcript-genomic-pos')">
+                <div class="card-header">Transcript Position</div>
+                <div class="card-body">
+                    <p class="card-text">HAVCR1:c.487, 5:156479558</p>
+                </div>
+            </div>
+            <!-- Genomic Region Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('genomic-region')">
+                <div class="card-header">Genomic Region</div>
+                <div class="card-body">
+                    <p class="card-text">chr5:156479372..156479666</p>
+                </div>
+            </div>
+            <!-- Gene Symbol Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('gene-symbol')">
+                <div class="card-header">Gene Symbol</div>
+                <div class="card-body">
+                    <p class="card-text">BRAF, HGNC:1097</p>
+                </div>
+            </div>
+            <!-- Transcript Identifier Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('transcript-id')">
+                <div class="card-header">Transcript ID</div>
+                <div class="card-body">
+                    <p class="card-text">NM_002482</p>
+                </div>
+            </div>
+            <!-- CNVs Card -->
+            <div class="card card-custom text-center" onclick="scrollToSection('cnvs')">
+                <div class="card-header">CNVs</div>
+                <div class="card-body">
+                    <p class="card-text">chr7:117138367:117159446:DEL</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Preview Content -->
+        <div id="preview-content">
+            <p>{{ content[:500]|safe }}</p> <!-- First 500 characters for preview -->
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm show-more" onclick="toggleContent()">Show More</button>
+            </div>
+        </div>
+        
+        <!-- Full Content with animation (initially hidden) -->
+        <div id="full-content" class="collapsible-content">
+            <p id="dbsnp-rsid">{{ content|safe }}</p> <!-- Dbsnp RSID section anchor -->
+            <p id="hgvs-dna">{{ content|safe }}</p> <!-- HGVS DNA section anchor -->
+            <p id="hgvs-aa">{{ content|safe }}</p> <!-- HGVS Amino Acid section anchor -->
+            <p id="chrom-pos-ref-var">{{ content|safe }}</p> <!-- Chromosome-Position section anchor -->
+            <p id="chrom-pos-ref-len-var">{{ content|safe }}</p> <!-- Chromosome-Position with Length section anchor -->
+            <p id="vcf-format">{{ content|safe }}</p> <!-- VCF Format section anchor -->
+            <p id="cosmic-id">{{ content|safe }}</p> <!-- COSMIC ID section anchor -->
+            <p id="transcript-genomic-pos">{{ content|safe }}</p> <!-- Transcript or Genomic Position section anchor -->
+            <p id="genomic-region">{{ content|safe }}</p> <!-- Genomic Region section anchor -->
+            <p id="gene-symbol">{{ content|safe }}</p> <!-- Gene Symbol section anchor -->
+            <p id="transcript-id">{{ content|safe }}</p> <!-- Transcript ID section anchor -->
+            <p id="cnvs">{{ content|safe }}</p> <!-- CNVs section anchor -->
+            <div class="text-center">
+                <button class="btn btn-secondary btn-sm show-less" onclick="toggleContent()">Show Less</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (without integrity attribute) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function toggleContent() {
+            const previewContent = document.getElementById('preview-content');
+            const fullContent = document.getElementById('full-content');
+            
+            if (fullContent.style.maxHeight === '0px' || fullContent.style.maxHeight === '') {
+                previewContent.style.display = 'none';
+                fullContent.style.maxHeight = fullContent.scrollHeight + 'px';
+            } else {
+                fullContent.style.maxHeight = '0';
+                setTimeout(() => {
+                    previewContent.style.display = 'block';
+                }, 500);
+            }
+        }
+        
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (document.getElementById('full-content').style.maxHeight === '0px' || document.getElementById('full-content').style.maxHeight === '') {
+                toggleContent();
+            }
+        }
+    </script>
+</body>
+</html>

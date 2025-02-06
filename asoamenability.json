@@ -1,0 +1,63 @@
+{
+	"Damage to canonical splicing" : [{
+		"name": "Severe",
+		"conditions": [{
+			"li_id": "paper-condition-1-1-1",
+			"text": "SpliceAI donor/acceptor loss score ≥ 0.1 and 2) [MaxEntScan donor/acceptor score with the variant < 2] or [MaxEntScan donor/acceptor score with the variant < 0.3 × MaxEntScan donor/acceptor score without the variant]"}]
+		},
+		{"name": "Moderate (either)",
+  		 "conditions": [
+			{"li_id": "paper-condition-1-2-1",
+			 "text": "Not 'severe' (as defined above)"},
+			{"li_id": "paper-condition-1-2-2",
+			 "text": "SpliceAI donor/acceptor loss score ≥ 0.1"},
+			{"li_id": "paper-condition-1-2-3",
+			 "text": "[MaxEntScan donor/acceptor score with the variant ≥ 2 and MaxEntScan donor/acceptor score with the variant ≥ 0.3 × MaxEntScan donor/acceptor score without the variant and MaxEntScan donor/acceptor score with the variant < MaxEntScan donor/acceptor score without the variant] or [the variant is ≤3 nt away from the LaBranchoR predicted branchpoint or distance between LaBranchoR predicted branchpoint and canonical acceptor site change more than 3 nt with the variant]"}]
+		},
+		{"name": "No to little",
+ 		"conditions": [{ 
+			"li_id": "paper-condition-1-3-1",
+			"text": "Neither “severe” nor “moderate” (as defined above)"
+			}]
+	}],			
+	"Damage to protein-coding function": [{
+		"name": "Severe (either)",
+		"conditions":[
+			{"li_id": "paper-condition-2-1-1",
+			 "text": "Frameshift, stop-gain, or start-loss variant"},
+			 {"li_id": "paper-condition-2-1-2",
+			  "text": "Missense variant unanimously predicted as pathogenic by SIFT and PolyPhen-2 (SIFT, 'deleterious'; PolyPhen-2, 'probably damaging' or 'possibly damaging')"},
+			 {"li_id": "paper-condition-2-1-3",
+			  "text": "Variant with experimental evidence of complete loss of the function"}
+			]
+		},
+		{"name": "Moderate",
+		 "conditions": [{
+			"li_id": "paper-condition-2-2-1",
+			"text": "Not “severe” (as defined above) and Conflicting pathogenicity prediction by SIFT and PolyPhen-2 (either one of the two predictions does not indicate pathogenicity)"
+		 	}]
+		},
+		{"name": "No to little",
+		 "conditions": [{
+			 "li_id": "paper-condition-2-3-1",
+			 "text": "Neither “severe” nor “moderate,” 2) Synonymous variant or missense variant predicted as benign by both SIFT (“tolerated”) and PolyPhen-2 (“benign”)"}
+		 	]
+	}],
+	"Mis-splicing type": [
+		{"name": "Gain of mis-splicing (“gain”)",
+		 "conditions": [{
+			"li_id": "paper-condition-3-1-1",
+			"text": "SpliceAI donor/acceptor gain score ≥ 0.1 at a non-canonical splice site or 2) Variant with experimental evidence of a splice site gain"}]
+		},
+		{"name": "Exon skipping or intron retention (“skipping/retention”)",
+		 "conditions": [{
+			 "li_id": "paper-condition-3-2-1",
+			 "text": "SpliceAI donor/acceptor loss score ≥ 0.1 at a canonical splice site without an accompanying gain of mis-splicing by SpliceAI (donor/acceptor gain score <0.1)"}]
+		},
+		{"name": "Neither",
+		 "conditions": [{
+			 "li_id": "paper-condition-3-3-1",
+			 "text": "Not “gain” or “skipping/retention”"}]
+	}]
+}
+

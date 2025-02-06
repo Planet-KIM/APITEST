@@ -1,0 +1,52 @@
+.btn-opt p {
+    width: 80%;
+    font-size: 8px;
+}
+
+.btn-style {
+    position: relative;
+}
+
+.btn-tooltip {
+	visibility: hidden;
+    position: absolute;
+    color: #000;
+    min-width: 250px;
+    max-width: 350px;
+    height: auto;
+    top: -55px;
+    left: 40px;
+    background: #fff;
+    font-size: 12px;
+    padding: 10px 18px;
+    border-radius: 40px;
+    opacity: 0;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn-style:hover .btn-tooltip{
+	visibility: visible;
+    opacity: 2;
+    pointer-events: auto;
+}
+
+
+.btn-tooltip:before {
+	visibility: hidden;
+    position: absolute;
+    content: "";
+    height: auto;
+    width: auto;
+    background: #fff;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+@media only screen and (max-width: 767px){
+    .btn-tooltip {
+        top: -135px;
+        left: 80px;
+    }
+}

@@ -1,0 +1,112 @@
+<!-- templates/variant.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Variant 결과</title>
+    <style>
+        /* 로딩 스피너 스타일 */
+        .spinner {
+            border: 4px solid #f3f3f3; /* 연한 회색 */
+            border-top: 4px solid #3498db; /* 파란색 */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .api-result {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Variant 분석 결과</h1>
+    <div id="results">
+        <!-- 각 API의 결과가 여기 표시됩니다 -->
+    </div>
+
+    <script type="text/javascript">
+        var variant = {{ variant|tojson }};
+        var apis = {{ apis|tojson }};
+
+        const apiList = apis.split(',');
+
+        // 결과 영역에 각 API에 대한 플레이스홀더와 로딩 인디케이터를 초기화합니다.
+        const resultsDiv = document.getElementById('results');
+
+        apiList.forEach(function(api) {
+            const apiDiv = document.createElement('div');
+            apiDiv.id = 'api-' + api;
+            apiDiv.className = 'api-result';
+
+            const apiTitle = document.createElement('h2');
+            apiTitle.textContent = api;
+
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.className = 'spinner';
+            loadingIndicator.id = 'loading-' + api;
+
+            const statusText = document.createElement('span');
+            statusText.id = 'status-' + api;
+            statusText.textContent = ' 진행 중...';
+
+            apiDiv.appendChild(apiTitle);
+            apiDiv.appendChild(loadingIndicator);
+            apiDiv.appendChild(statusText);
+
+            resultsDiv.appendChild(apiDiv);
+        });
+
+        // SSE 연결 시작
+        const encodedVariant = encodeURIComponent(variant);
+        const encodedApis = encodeURIComponent(apis);
+        const eventSource = new EventSource(`/stream?variant=${encodedVariant}&apis=${encodedApis}`);
+
+        eventSource.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            const api = data.route;
+            const response = data.response_data;
+
+            // 해당 API의 div 찾기
+            const apiDiv = document.getElementById('api-' + api);
+
+            // 로딩 인디케이터 제거
+            const loadingIndicator = document.getElementById('loading-' + api);
+            if (loadingIndicator) {
+                loadingIndicator.remove();
+            }
+
+            // 상태 텍스트 제거
+            const statusText = document.getElementById('status-' + api);
+            if (statusText) {
+                statusText.remove();
+            }
+
+            // 에러 여부 확인
+            if (response.error) {
+                const errorDiv = document.createElement('div');
+                errorDiv.style.color = 'red';
+                errorDiv.textContent = '에러: ' + response.error;
+                apiDiv.appendChild(errorDiv);
+            } else {
+                // 결과 표시
+                const pre = document.createElement('pre');
+                pre.textContent = JSON.stringify(response, null, 2);
+                apiDiv.appendChild(pre);
+            }
+        };
+
+        eventSource.onerror = function(e) {
+            console.error("SSE 연결 오류:", e);
+            eventSource.close();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .button {
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 4px;
+      position: relative;
+      font-size: 14px;
+    }
+
+    .tooltip {
+      visibility: hidden;
+      background-color: #ffffff;
+      color: #000000;
+      text-align: left;
+      border-radius: 6px;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      position: absolute;
+      z-index: 1;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+    }
+
+    .button:focus .tooltip {
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+
+<button class="button" style="background-color:#ff0000;" onclick="this.focus();">
+  Transcript ablation
+  <div class="tooltip">
+    <strong>Impact:</strong> HIGH<br>
+    <strong>Description:</strong> A feature ablation whereby the deleted region includes a transcript feature
+  </div>
+</button>
+
+<button class="button" style="background-color:#FF581A;" onclick="this.focus();">
+  Splice acceptor variant
+  <div class="tooltip">
+    <strong>Impact:</strong> HIGH<br>
+    <strong>Description:</strong> A splice variant that changes the 2 base region at the 3' end of an intron
+  </div>
+</button>
+
+<button class="button" style="background-color:#FF581A;" onclick="this.focus();">
+  Splice donor variant
+  <div class="tooltip">
+    <strong>Impact:</strong> HIGH<br>
+    <strong>Description:</strong> A splice variant that changes the 2 base region at the 5' end of an intron
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff0000;" onclick="this.focus();">
+  Stop gained
+  <div class="tooltip">
+    <strong>Impact:</strong> HIGH<br>
+    <strong>Description:</strong> A sequence variant whereby at least one base of a codon is changed, resulting in a premature stop codon, leading to a shortened transcript
+  </div>
+</button>
+
+<button class="button" style="background-color:#9400D3;" onclick="this.focus();">
+  Frameshift variant
+  <div class="tooltip">
+    <strong>Impact:</strong> HIGH<br>
+    <strong>Description:</strong> A sequence variant which causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff0000;" onclick="this.focus();">
+  Stop lost
+  <div class="tooltip">
+    <strong>Impact:</strong> HIGH<br>
+    <strong>Description:</strong> A sequence variant where at least one base of the terminator codon (stop) is changed, resulting in an elongated transcript
+  </div>
+</button>
+
+<button class="button" style="background-color:#ffd700;" onclick="this.focus();">
+  Start lost
+  <div class="tooltip">
+    <strong>Impact:</strong> HIGH<br>
+    <strong>Description:</strong> A codon variant that changes at least one base of the canonical start codon
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff69b4;" onclick="this.focus();">
+  Transcript amplification
+  <div class="tooltip">
+    <strong>Impact:</strong> HIGH<br>
+    <strong>Description:</strong> A feature amplification of a region containing a transcript
+  </div>
+</button>
+
+<button class="button" style="background-color:#7f7f7f;" onclick="this.focus();">
+  Feature elongation
+  <div class="tooltip">
+    <strong>Impact:</strong> HIGH<br>
+    <strong>Description:</strong> A sequence variant that causes the extension of a genomic feature, with regard to the reference sequence
+  </div>
+</button>
+
+<button class="button" style="background-color:#7f7f7f;" onclick="this.focus();">
+  Feature truncation
+  <div class="tooltip">
+    <strong>Impact:</strong> HIGH<br>
+    <strong>Description:</strong> A sequence variant that causes the reduction of a genomic feature, with regard to the reference sequence
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff69b4;" onclick="this.focus();">
+  Inframe insertion
+  <div class="tooltip">
+    <strong>Impact:</strong> MODERATE<br>
+    <strong>Description:</strong> An inframe non synonymous variant that inserts bases into in the coding sequence
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff69b4;" onclick="this.focus();">
+  Inframe deletion
+  <div class="tooltip">
+    <strong>Impact:</strong> MODERATE<br>
+    <strong>Description:</strong> An inframe non synonymous variant that deletes bases from the coding sequence
+  </div>
+</button>
+
+<button class="button" style="background-color:#ffd700;" onclick="this.focus();">
+  Missense variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODERATE<br>
+    <strong>Description:</strong> A sequence variant, that changes one or more bases, resulting in a different amino acid sequence but where the length is preserved
+  </div>
+</button>
+
+<button class="button" style="background-color:#FF0080;" onclick="this.focus();">
+  Protein altering variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODERATE<br>
+    <strong>Description:</strong> A sequence_variant which is predicted to change the protein encoded in the coding sequence
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff7f50;" onclick="this.focus();">
+  Splice donor 5th base variant
+  <div class="tooltip">
+    <strong>Impact:</strong> LOW<br>
+    <strong>Description:</strong> A sequence variant that causes a change at the 5th base pair after the start of the intron in the orientation of the transcript
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff7f50;" onclick="this.focus();">
+  Splice region variant
+  <div class="tooltip">
+    <strong>Impact:</strong> LOW<br>
+    <strong>Description:</strong> A sequence variant in which a change has occurred within the region of the splice site, either within 1-3 bases of the exon or 3-8 bases of the intron
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff7f50;" onclick="this.focus();">
+  Splice donor region variant
+  <div class="tooltip">
+    <strong>Impact:</strong> LOW<br>
+    <strong>Description:</strong> A sequence variant that falls in the region between the 3rd and 6th base after splice junction (5' end of intron)
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff7f50;" onclick="this.focus();">
+  Splice polypyrimidine tract variant
+  <div class="tooltip">
+    <strong>Impact:</strong> LOW<br>
+    <strong>Description:</strong> A sequence variant that falls in the polypyrimidine tract at 3' end of intron between 17 and 3 bases from the end (acceptor -3 to acceptor -17)
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff00ff;" onclick="this.focus();">
+  Incomplete terminal codon variant
+  <div class="tooltip">
+    <strong>Impact:</strong> LOW<br>
+    <strong>Description:</strong> A sequence variant where at least one base of the final codon of an incompletely annotated transcript is changed
+  </div>
+</button>
+
+<button class="button" style="background-color:#76ee00;" onclick="this.focus();">
+  Start retained variant
+  <div class="tooltip">
+    <strong>Impact:</strong> LOW<br>
+    <strong>Description:</strong> A sequence variant where at least one base in the start codon is changed, but the start remains
+  </div>
+</button>
+
+<button class="button" style="background-color:#76ee00;" onclick="this.focus();">
+  Stop retained variant
+  <div class="tooltip">
+    <strong>Impact:</strong> LOW<br>
+    <strong>Description:</strong> A sequence variant where at least one base in the terminator codon is changed, but the terminator remains
+  </div>
+</button>
+
+<button class="button" style="background-color:#76ee00;" onclick="this.focus();">
+  Synonymous variant
+  <div class="tooltip">
+    <strong>Impact:</strong> LOW<br>
+    <strong>Description:</strong> A sequence variant where there is no resulting change to the encoded amino acid
+  </div>
+</button>
+
+<button class="button" style="background-color:#458b00;" onclick="this.focus();">
+  Coding sequence variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A sequence variant that changes the coding sequence
+  </div>
+</button>
+
+<button class="button" style="background-color:#458b00;" onclick="this.focus();">
+  Mature miRNA variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A transcript variant located with the sequence of the mature miRNA
+  </div>
+</button>
+
+<button class="button" style="background-color:#7ac5cd;" onclick="this.focus();">
+  5 prime UTR variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A UTR variant of the 5' UTR
+  </div>
+</button>
+
+<button class="button" style="background-color:#7ac5cd;" onclick="this.focus();">
+  3 prime UTR variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A UTR variant of the 3' UTR
+  </div>
+</button>
+
+<button class="button" style="background-color:#32cd32;" onclick="this.focus();">
+  Non coding transcript exon variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A sequence variant that changes non-coding exon sequence in a non-coding transcript
+  </div>
+</button>
+
+<button class="button" style="background-color:#02599c;" onclick="this.focus();">
+  Intron variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A transcript variant occurring within an intron
+  </div>
+</button>
+
+<button class="button" style="background-color:#ff4500;" onclick="this.focus();">
+  NMD transcript variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A variant in a transcript that is the target of NMD
+  </div>
+</button>
+
+<button class="button" style="background-color:#32cd32;" onclick="this.focus();">
+  Non coding transcript variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A transcript variant of a non coding RNA gene
+  </div>
+</button>
+
+<button class="button" style="background-color:#458b00;" onclick="this.focus();">
+  Coding transcript variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A transcript variant of a protein coding gene
+  </div>
+</button>
+
+<button class="button" style="background-color:#a2b5cd;" onclick="this.focus();">
+  Upstream gene variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A sequence variant located 5' of a gene
+  </div>
+</button>
+
+<button class="button" style="background-color:#a2b5cd;" onclick="this.focus();">
+  Downstream gene variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A sequence variant located 3' of a gene
+  </div>
+</button>
+
+<button class="button" style="background-color:#a52a2a;" onclick="this.focus();">
+  TFBS ablation
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A feature ablation whereby the deleted region includes a transcription factor binding site
+  </div>
+</button>
+
+<button class="button" style="background-color:#a52a2a;" onclick="this.focus();">
+  TFBS amplification
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A feature amplification of a region containing a transcription factor binding site
+  </div>
+</button>
+
+<button class="button" style="background-color:#a52a2a;" onclick="this.focus();">
+  TF binding site variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A sequence variant located within a transcription factor binding site
+  </div>
+</button>
+
+<button class="button" style="background-color:#a52a2a;" onclick="this.focus();">
+  Regulatory region ablation
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A feature ablation whereby the deleted region includes a regulatory region
+  </div>
+</button>
+
+<button class="button" style="background-color:#a52a2a;" onclick="this.focus();">
+  Regulatory region amplification
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A feature amplification of a region containing a regulatory region
+  </div>
+</button>
+
+<button class="button" style="background-color:#a52a2a;" onclick="this.focus();">
+  Regulatory region variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A sequence variant located within a regulatory region
+  </div>
+</button>
+
+<button class="button" style="background-color:#636363;" onclick="this.focus();">
+  Intergenic variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A sequence variant located in the intergenic region, between genes
+  </div>
+</button>
+
+<button class="button" style="background-color:#636363;" onclick="this.focus();">
+  Sequence variant
+  <div class="tooltip">
+    <strong>Impact:</strong> MODIFIER<br>
+    <strong>Description:</strong> A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration
+  </div>
+</button>
+
+</body>
+</html>

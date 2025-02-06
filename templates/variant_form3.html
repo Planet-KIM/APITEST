@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+    {% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tooltip.css') }}">
+    {% endblock %}
+    
+    {% block content %}
+	<div class="loader display-none">
+	  <span></span>
+	  <span></span>
+	  <span></span>
+	</div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="height: calc(100vh - 60px);">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <!--<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="height: calc(100vh - 60px);">
+                <img alt="..." class="d-block w-100" src="{{ url_for('static', filename='img/mountain.png') }}">
+                <div class="carousel-caption">
+			        <h5 class="animated fadeInDown" style="animation-delay: 1s">JKLAB DataPortal</h5>
+				    <p class="animated fadeInUp d-none d-md-block" style="animation-delay: 2s">Annotation the variants. Reproduce and Rebuild the BIO Projects.</p>
+				    
+                    <form class="animated fadeInUp" style="animation-delay: 3s;" method='post'>
+						<div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" style="margin-bottom: 10px; margin-top: 10px;">
+							<input type="checkbox" class="btn-check" id="btncheck_hg19" name="btncheck_hg19" autocomplete="off" value="true">
+							<label class="btn btn-outline-primary" for="btncheck_hg19">LiftOver the input coordinate from hg19 to hg38</label>
+						</div>
+
+                        <div class="input-group mb-3">
+                            <input class="form-control" id="search" type="search" name="variant" placeholder="Variants, rsID, HGVS" aria-label="Search" aria-describedby="btn-submit" onkeypress="">
+                            <button class="btn btn-outline-success" id="btn-submit" type="submit" onclick="formCheck()">Search</button>
+							<button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+									  Examples <span class="caret"></span>
+							</button>
+							  <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+								  {% for item in user_variant %}
+								  <li><a class="dropdown-item" style="padding: 0px; margin: 5px; background: none; color: #000; text-transform: none;" onclick="insert_Into_search();">{{ item }}</a></li>
+								  {% endfor %}
+								  <li class="dropdown-divider"></li>
+								  <li><a class="dropdown-item" onclick="openWindow()">Guide</a></li>
+							  </ul>
+                        </div>
+
+                        <!-- Variant API Selector-->
+                        <form class="api-group btns" role="group" aria-label="Basic checkbox toggle button group" method='post'>
+                            {% for item in apis["API"] %}
+                                {% if '-non' not in item['Id'] %}
+                                    {% if 'asoamenable' in item['Id'] %}
+									<!-- -->
+                                    <input type="checkbox" class="btn-check" id="{{ item['Id'] }}" name="apis" value="{{ item['Route'] }}" onclick="apiToggle();">
+                                    <label class="btn btn-outline-primary btn-style" for="{{ item['Id'] }}">{{ item['Text'] }}
+                                        <div id="opt_btn" class="option-btn btn-tooltip">
+                                            <div class="btn-opt">
+                                                    <p>■ Experimental evidence of complete loss of protein-coding function</p>
+                                                    <label class="clf-no-btn">
+                                                        <input type="radio" name="options-{{ item['Route'] }}-clf" value=true checked> No or unknown
+                                                    </label>
+                                                    <label class="clf-yes-btn">
+                                                            <input type="radio" name="options-{{ item['Route'] }}-clf" value=false> Yes
+                                                    </label>
+                                            </div>
+                                            <div class="btn-opt">
+                                                <p>■ Experimental evidence of a splice site gain</p>
+                                                <label class="ssg-no-btn">
+                                                        <input type="radio" name="options-{{ item['Route'] }}-ssg" value=true checked> No or unknown
+                                                </label>
+                                                <label class="ssg-yes-btn">
+                                                        <input type="radio" name="options-{{ item['Route'] }}-ssg" value=false> Yes
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    {% else %}
+										{% if 'special' in item['Id'] %}
+											<!-- -->
+                                            <input type="checkbox" class="btn-check" id="{{ item['Id'] }}" name="apis" value="{{ item['Route'] }}" onclick="apiToggle();">
+											<label class="btn btn-outline-primary btn-style" for="{{ item['Id'] }}" style="display: none;">{{ item['Text'] }}</label>
+										{% else %}
+											<!-- -->
+                                            <input type="checkbox" class="btn-check" id="{{ item['Id'] }}" name="apis" value="{{ item['Route'] }}" onclick="apiToggle();" checked>
+											<label class="btn btn-outline-primary btn-style" for="{{ item['Id'] }}" style="display: none;">{{ item['Text'] }}</label>
+										{% endif %}
+									{% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </form>
+                    </form>
+                    
+                    <p class="animated fadeInUp" style="animation-delay: 4s">
+						<a href="#" style="font-size: 12px; margin-top: 35px;">Examples</a>
+					</p>
+                </div>
+			</div>
+		</div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    {% endblock %}
+    {% block javascript %}
+		<script type="module">
+		  //import { setupCheckboxToggle } from "{{ url_for('static',  filename='js/common.js') }}";
+		  //setupCheckboxToggle('btncheck_hg19', 'btncheck_hg38');
+		</script>
+	{% endblock %}
+
+

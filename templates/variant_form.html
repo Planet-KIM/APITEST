@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Variant 입력</title>
+</head>
+<body>
+    <h1>Variant 분석기</h1>
+    <form action="/variant" method="post">
+        <label for="variant">Variant:</label>
+        <input type="text" id="variant" name="variant" required><br><br>
+
+        <label>APIs 선택:</label><br>
+        <input type="checkbox" name="apis" value="vep"> vep<br>
+        <input type="checkbox" name="apis" value="parse2mane"> parse2mane<br>
+        <input type="checkbox" name="apis" value="split2vcf"> split2vcf<br>
+        <input type="checkbox" name="apis" value="gnomad"> gnomad<br>
+        <input type="checkbox" name="apis" value="topmed"> topmed<br>
+        <input type="checkbox" name="apis" value="spliceai"> spliceai<br>
+        <input type="checkbox" name="apis" value="maxentscan"> maxentscan<br>
+        <input type="checkbox" name="apis" value="hexamer"> hexamer<br>
+        <input type="checkbox" name="apis" value="labranchor"> labranchor<br>
+        <input type="checkbox" name="apis" value="prime5_loc"> prime5_loc<br>
+        <input type="checkbox" name="apis" value="utrannotator"> utrannotator<br>
+        <input type="checkbox" name="apis" value="litvar"> litvar<br><br>
+
+        <input type="submit" value="분석 시작">
+    </form>
+</body>

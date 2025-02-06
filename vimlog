@@ -1,0 +1,908 @@
+
+chdir(/usr/share/vim)
+fchdir() to previous dir
+sourcing "$VIM/vimrc"
+finished sourcing $VIM/vimrc
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+could not source "$VIMRUNTIME/macmap.vim"
+chdir(/Users/dowonkim)
+fchdir() to previous dir
+sourcing "$HOME/.vimrc"
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 42: sourcing "/usr/share/vim/vim90/filetype.vim"
+not found in 'runtimepath': "ftdetect/*.vim"
+finished sourcing /usr/share/vim/vim90/filetype.vim
+continuing in /Users/dowonkim/.vimrc
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 42: sourcing "/usr/share/vim/vim90/indent.vim"
+finished sourcing /usr/share/vim/vim90/indent.vim
+continuing in /Users/dowonkim/.vimrc
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 43: sourcing "/usr/share/vim/vim90/filetype.vim"
+finished sourcing /usr/share/vim/vim90/filetype.vim
+continuing in /Users/dowonkim/.vimrc
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 43: sourcing "/usr/share/vim/vim90/ftplugin.vim"
+finished sourcing /usr/share/vim/vim90/ftplugin.vim
+continuing in /Users/dowonkim/.vimrc
+chdir(/Users/dowonkim/.vim_runtime/vimrcs)
+fchdir() to previous dir
+line 53: sourcing "/Users/dowonkim/.vim_runtime/vimrcs/basic.vim"
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 37: sourcing "/usr/share/vim/vim90/filetype.vim"
+finished sourcing /usr/share/vim/vim90/filetype.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 37: sourcing "/usr/share/vim/vim90/ftplugin.vim"
+finished sourcing /usr/share/vim/vim90/ftplugin.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 38: sourcing "/usr/share/vim/vim90/filetype.vim"
+finished sourcing /usr/share/vim/vim90/filetype.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 38: sourcing "/usr/share/vim/vim90/indent.vim"
+finished sourcing /usr/share/vim/vim90/indent.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 65: sourcing "/usr/share/vim/vim90/delmenu.vim"
+finished sourcing /usr/share/vim/vim90/delmenu.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 66: sourcing "/usr/share/vim/vim90/menu.vim"
+not found in 'runtimepath': "lang/menu_en.utf-8.vim"
+chdir(/usr/share/vim/vim90/lang)
+fchdir() to previous dir
+line 59: sourcing "/usr/share/vim/vim90/lang/menu_en_gb.latin1.vim"
+finished sourcing /usr/share/vim/vim90/lang/menu_en_gb.latin1.vim
+continuing in /usr/share/vim/vim90/menu.vim
+chdir(/usr/share/vim/vim90/lang)
+fchdir() to previous dir
+line 59: sourcing "/usr/share/vim/vim90/lang/menu_en_gb.utf-8.vim"
+chdir(/usr/share/vim/vim90/lang)
+fchdir() to previous dir
+line 3: sourcing "/usr/share/vim/vim90/lang/menu_en_gb.latin1.vim"
+finished sourcing /usr/share/vim/vim90/lang/menu_en_gb.latin1.vim
+continuing in /usr/share/vim/vim90/lang/menu_en_gb.utf-8.vim
+finished sourcing /usr/share/vim/vim90/lang/menu_en_gb.utf-8.vim
+continuing in /usr/share/vim/vim90/menu.vim
+chdir(/usr/share/vim/vim90/autoload)
+fchdir() to previous dir
+line 185: sourcing "/usr/share/vim/vim90/autoload/paste.vim"
+finished sourcing /usr/share/vim/vim90/autoload/paste.vim
+continuing in /usr/share/vim/vim90/menu.vim
+finished sourcing /usr/share/vim/vim90/menu.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+chdir(/usr/share/vim/vim90/syntax)
+fchdir() to previous dir
+line 135: sourcing "/usr/share/vim/vim90/syntax/syntax.vim"
+chdir(/usr/share/vim/vim90/syntax)
+fchdir() to previous dir
+line 20: sourcing "/usr/share/vim/vim90/syntax/synload.vim"
+chdir(/usr/share/vim/vim90/syntax)
+fchdir() to previous dir
+line 22: sourcing "/usr/share/vim/vim90/syntax/syncolor.vim"
+chdir(/usr/share/vim/vim90/colors/lists)
+fchdir() to previous dir
+line 37: sourcing "/usr/share/vim/vim90/colors/lists/default.vim"
+finished sourcing /usr/share/vim/vim90/colors/lists/default.vim
+continuing in /usr/share/vim/vim90/syntax/syncolor.vim
+finished sourcing /usr/share/vim/vim90/syntax/syncolor.vim
+continuing in /usr/share/vim/vim90/syntax/synload.vim
+finished sourcing /usr/share/vim/vim90/syntax/synload.vim
+continuing in /usr/share/vim/vim90/syntax/syntax.vim
+Executing FileType Autocommands for "*"
+autocommand 0verbose exe "set syntax=" . expand("<amatch>")
+
+finished sourcing /usr/share/vim/vim90/syntax/syntax.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+chdir(/usr/share/vim/vim90/colors/lists)
+fchdir() to previous dir
+line 143: sourcing "/usr/share/vim/vim90/colors/lists/default.vim"
+finished sourcing /usr/share/vim/vim90/colors/lists/default.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+chdir(/usr/share/vim/vim90/colors)
+fchdir() to previous dir
+line 143: sourcing "/usr/share/vim/vim90/colors/desert.vim"
+chdir(/usr/share/vim/vim90/syntax)
+fchdir() to previous dir
+line 11: sourcing "/usr/share/vim/vim90/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim90/syntax/syncolor.vim
+continuing in /usr/share/vim/vim90/colors/desert.vim
+chdir(/usr/share/vim/vim90/syntax)
+fchdir() to previous dir
+line 13: sourcing "/usr/share/vim/vim90/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim90/syntax/syncolor.vim
+continuing in /usr/share/vim/vim90/colors/desert.vim
+finished sourcing /usr/share/vim/vim90/colors/desert.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+chdir(/usr/share/vim/vim90/colors/lists)
+fchdir() to previous dir
+line 147: sourcing "/usr/share/vim/vim90/colors/lists/default.vim"
+finished sourcing /usr/share/vim/vim90/colors/lists/default.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+chdir(/usr/share/vim/vim90/colors)
+fchdir() to previous dir
+line 147: sourcing "/usr/share/vim/vim90/colors/desert.vim"
+chdir(/usr/share/vim/vim90/syntax)
+fchdir() to previous dir
+line 13: sourcing "/usr/share/vim/vim90/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim90/syntax/syncolor.vim
+continuing in /usr/share/vim/vim90/colors/desert.vim
+finished sourcing /usr/share/vim/vim90/colors/desert.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+finished sourcing /Users/dowonkim/.vim_runtime/vimrcs/basic.vim
+continuing in /Users/dowonkim/.vimrc
+chdir(/Users/dowonkim/.vim_runtime/vimrcs)
+fchdir() to previous dir
+line 54: sourcing "/Users/dowonkim/.vim_runtime/vimrcs/filetypes.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/vimrcs/filetypes.vim
+continuing in /Users/dowonkim/.vimrc
+chdir(/Users/dowonkim/.vim_runtime/vimrcs)
+fchdir() to previous dir
+line 55: sourcing "/Users/dowonkim/.vim_runtime/vimrcs/plugins_config.vim"
+chdir(/Users/dowonkim/.vim_runtime/autoload)
+fchdir() to previous dir
+line 12: sourcing "/Users/dowonkim/.vim_runtime/autoload/pathogen.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/autoload/pathogen.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/plugins_config.vim
+chdir(/Users/dowonkim/.vim_runtime/vimrcs/../sources_forked)
+fchdir() to previous dir
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 2: sourcing "/usr/share/vim/vim90/ftoff.vim"
+finished sourcing /usr/share/vim/vim90/ftoff.vim
+continuing in pathogen#cycle_filetype
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 3: sourcing "/usr/share/vim/vim90/filetype.vim"
+not found in 'runtimepath': "ftdetect/*.vim"
+finished sourcing /usr/share/vim/vim90/filetype.vim
+continuing in pathogen#cycle_filetype
+chdir(/Users/dowonkim/.vim_runtime/vimrcs/../sources_non_forked)
+fchdir() to previous dir
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 2: sourcing "/usr/share/vim/vim90/ftoff.vim"
+finished sourcing /usr/share/vim/vim90/ftoff.vim
+continuing in pathogen#cycle_filetype
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 3: sourcing "/usr/share/vim/vim90/filetype.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nginx.vim/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nginx.vim/ftdetect/nginx.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nginx.vim/ftdetect/nginx.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/ftdetect/rust.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/ftdetect/rust.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/typescript-vim/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/typescript-vim/ftdetect/typescript.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/typescript-vim/ftdetect/typescript.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-bundle-mako/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-bundle-mako/ftdetect/mako.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-bundle-mako/ftdetect/mako.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect/coffee.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect/coffee.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect/vim-literate-coffeescript.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect/vim-literate-coffeescript.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-fugitive/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-fugitive/ftdetect/fugitive.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-fugitive/ftdetect/fugitive.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect/flow.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect/flow.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect/javascript.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect/javascript.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-less/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-less/ftdetect/less.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-less/ftdetect/less.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-markdown/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-markdown/ftdetect/markdown.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-markdown/ftdetect/markdown.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-pug/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-pug/ftdetect/pug.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-pug/ftdetect/pug.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect/ruby.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect/ruby.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect/ruby_extra.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect/ruby_extra.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+finished sourcing /usr/share/vim/vim90/filetype.vim
+continuing in pathogen#cycle_filetype
+chdir(/Users/dowonkim/.vim_runtime/vimrcs/../my_plugins)
+fchdir() to previous dir
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 2: sourcing "/usr/share/vim/vim90/ftoff.vim"
+finished sourcing /usr/share/vim/vim90/ftoff.vim
+continuing in pathogen#cycle_filetype
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 3: sourcing "/usr/share/vim/vim90/filetype.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nginx.vim/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nginx.vim/ftdetect/nginx.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nginx.vim/ftdetect/nginx.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/ftdetect/rust.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/ftdetect/rust.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/typescript-vim/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/typescript-vim/ftdetect/typescript.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/typescript-vim/ftdetect/typescript.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-bundle-mako/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-bundle-mako/ftdetect/mako.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-bundle-mako/ftdetect/mako.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect/coffee.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect/coffee.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect/vim-literate-coffeescript.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-coffee-script/ftdetect/vim-literate-coffeescript.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-fugitive/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-fugitive/ftdetect/fugitive.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-fugitive/ftdetect/fugitive.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect/flow.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect/flow.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect/javascript.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-javascript/ftdetect/javascript.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-less/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-less/ftdetect/less.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-less/ftdetect/less.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-markdown/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-markdown/ftdetect/markdown.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-markdown/ftdetect/markdown.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-pug/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-pug/ftdetect/pug.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-pug/ftdetect/pug.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect/ruby.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect/ruby.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect)
+fchdir() to previous dir
+line 2907: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect/ruby_extra.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-ruby/ftdetect/ruby_extra.vim
+continuing in /usr/share/vim/vim90/filetype.vim
+finished sourcing /usr/share/vim/vim90/filetype.vim
+continuing in pathogen#cycle_filetype
+finished sourcing /Users/dowonkim/.vim_runtime/vimrcs/plugins_config.vim
+continuing in /Users/dowonkim/.vimrc
+chdir(/Users/dowonkim/.vim_runtime/vimrcs)
+fchdir() to previous dir
+line 56: sourcing "/Users/dowonkim/.vim_runtime/vimrcs/extended.vim"
+chdir(/usr/share/vim/vim90/colors/lists)
+fchdir() to previous dir
+line 31: sourcing "/usr/share/vim/vim90/colors/lists/default.vim"
+finished sourcing /usr/share/vim/vim90/colors/lists/default.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/extended.vim
+chdir(/usr/share/vim/vim90/colors)
+fchdir() to previous dir
+line 31: sourcing "/usr/share/vim/vim90/colors/desert.vim"
+chdir(/usr/share/vim/vim90/syntax)
+fchdir() to previous dir
+line 13: sourcing "/usr/share/vim/vim90/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim90/syntax/syncolor.vim
+continuing in /usr/share/vim/vim90/colors/desert.vim
+finished sourcing /usr/share/vim/vim90/colors/desert.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/extended.vim
+chdir(/usr/share/vim/vim90/colors/lists)
+fchdir() to previous dir
+line 32: sourcing "/usr/share/vim/vim90/colors/lists/default.vim"
+finished sourcing /usr/share/vim/vim90/colors/lists/default.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/extended.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_forked/peaksea/colors)
+fchdir() to previous dir
+line 32: sourcing "/Users/dowonkim/.vim_runtime/sources_forked/peaksea/colors/peaksea.vim"
+chdir(/usr/share/vim/vim90/syntax)
+fchdir() to previous dir
+line 33: sourcing "/usr/share/vim/vim90/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim90/syntax/syncolor.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_forked/peaksea/colors/peaksea.vim
+chdir(/usr/share/vim/vim90/syntax)
+fchdir() to previous dir
+line 36: sourcing "/usr/share/vim/vim90/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim90/syntax/syncolor.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_forked/peaksea/colors/peaksea.vim
+finished sourcing /Users/dowonkim/.vim_runtime/sources_forked/peaksea/colors/peaksea.vim
+continuing in /Users/dowonkim/.vim_runtime/vimrcs/extended.vim
+finished sourcing /Users/dowonkim/.vim_runtime/vimrcs/extended.vim
+continuing in /Users/dowonkim/.vimrc
+chdir(/Users/dowonkim/.vim_runtime)
+fchdir() to previous dir
+line 59: could not source "/Users/dowonkim/.vim_runtime/my_configs.vim"
+finished sourcing $HOME/.vimrc
+chdir(/Users/dowonkim/.vim)
+fchdir() to previous dir
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/ack.vim)
+fchdir() to previous dir
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/ack.vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/ack.vim/plugin/ack.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/ack.vim/plugin/ack.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/ale/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/ale/plugin/ale.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/ale/autoload/ale)
+fchdir() to previous dir
+line 323: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/ale/autoload/ale/events.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/ale/autoload/ale/events.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/ale/plugin/ale.vim
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/ale/plugin/ale.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/auto-pairs/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/auto-pairs/plugin/auto-pairs.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/auto-pairs/plugin/auto-pairs.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/bufexplorer/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/bufexplorer/plugin/bufexplorer.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/bufexplorer/plugin/bufexplorer.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/ctrlp.vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/ctrlp.vim/plugin/ctrlp.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/ctrlp.vim/autoload/ctrlp)
+fchdir() to previous dir
+line 43: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/ctrlp.vim/autoload/ctrlp/mrufiles.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/ctrlp.vim/autoload/ctrlp/mrufiles.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/ctrlp.vim/plugin/ctrlp.vim
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/ctrlp.vim/plugin/ctrlp.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/editorconfig-vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/editorconfig-vim/plugin/editorconfig.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/editorconfig-vim/plugin/editorconfig.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/gist-vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/gist-vim/plugin/gist.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/gist-vim/plugin/gist.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/goyo.vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/goyo.vim/plugin/goyo.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/goyo.vim/plugin/goyo.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/lightline-ale/plugin/lightline)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/lightline-ale/plugin/lightline/ale.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/lightline-ale/plugin/lightline/ale.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/plugin/lightline.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/plugin/lightline.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/mru.vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/mru.vim/plugin/mru.vim"
+Error detected while processing /Users/dowonkim/.vim_runtime/sources_non_forked/mru.vim/plugin/mru.vim[1013]..function <SNR>49_MRU_LoadList[21]..<SNR>49_MRU_Refresh_Menu:
+line   12:
+E329: No menu "&Recent Files"
+Error detected while processing /Users/dowonkim/.vim_runtime/sources_non_forked/mru.vim/plugin/mru.vim[1013]..function <SNR>49_MRU_LoadList[21]..<SNR>49_MRU_Refresh_Menu:
+line   17:
+E328: Menu only exists in another mode
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/mru.vim/plugin/mru.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/plugin/NERD_tree.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/autoload)
+fchdir() to previous dir
+line 56: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/autoload/nerdtree.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/autoload/nerdtree.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/plugin/NERD_tree.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 1: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/path.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/path.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 2: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/menu_controller.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/menu_controller.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 3: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/menu_item.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/menu_item.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 4: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/key_map.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/key_map.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 5: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/bookmark.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/bookmark.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 6: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/tree_file_node.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/tree_file_node.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 7: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/tree_dir_node.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/tree_dir_node.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 8: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/opener.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/opener.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 9: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/creator.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/creator.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 10: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/flag_set.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/flag_set.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 11: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/nerdtree.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/nerdtree.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 12: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/ui.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/ui.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 13: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/event.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/event.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree)
+fchdir() to previous dir
+line 14: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/notifier.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/lib/nerdtree/notifier.vim
+continuing in nerdtree#loadClassFiles
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/autoload/nerdtree)
+fchdir() to previous dir
+line 143: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/autoload/nerdtree/ui_glue.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/autoload/nerdtree/ui_glue.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/plugin/NERD_tree.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/nerdtree_plugin)
+fchdir() to previous dir
+line 5: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/nerdtree_plugin/exec_menuitem.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/nerdtree_plugin/exec_menuitem.vim
+continuing in nerdtree#postSourceActions
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/nerdtree_plugin)
+fchdir() to previous dir
+line 5: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/nerdtree_plugin/fs_menu.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/nerdtree_plugin/fs_menu.vim
+continuing in nerdtree#postSourceActions
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/nerdtree_plugin)
+fchdir() to previous dir
+line 5: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/nerdtree_plugin/vcs.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/nerdtree_plugin/vcs.vim
+continuing in nerdtree#postSourceActions
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/nerdtree/plugin/NERD_tree.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/open_file_under_cursor.vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/open_file_under_cursor.vim/plugin/open_file_under_cursor.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/open_file_under_cursor.vim/plugin/open_file_under_cursor.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/plugin/cargo.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/plugin/cargo.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/plugin/rust.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/rust.vim/plugin/rust.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/tabular/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/tabular/plugin/Tabular.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/tabular/plugin/Tabular.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/tlib/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/tlib/plugin/02tlib.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/tlib/plugin/02tlib.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-abolish/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-abolish/plugin/abolish.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-abolish/plugin/abolish.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-commentary/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-commentary/plugin/commentary.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-commentary/plugin/commentary.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-expand-region/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-expand-region/plugin/expand_region.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-expand-region/autoload)
+fchdir() to previous dir
+line 13: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-expand-region/autoload/expand_region.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-expand-region/autoload/expand_region.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/vim-expand-region/plugin/expand_region.vim
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-expand-region/plugin/expand_region.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-fugitive/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-fugitive/plugin/fugitive.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-fugitive/plugin/fugitive.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-gist/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-gist/plugin/gist.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-gist/plugin/gist.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/plugin/gitgutter.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/autoload/gitgutter)
+fchdir() to previous dir
+line 52: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/autoload/gitgutter/utility.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/autoload/gitgutter/utility.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/plugin/gitgutter.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/autoload/gitgutter)
+fchdir() to previous dir
+line 95: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/autoload/gitgutter/highlight.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/autoload/gitgutter/highlight.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/plugin/gitgutter.vim
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/plugin/gitgutter.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-indent-guides/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-indent-guides/plugin/indent_guides.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-indent-guides/autoload)
+fchdir() to previous dir
+line 13: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-indent-guides/autoload/indent_guides.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-indent-guides/autoload/indent_guides.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/vim-indent-guides/plugin/indent_guides.vim
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-indent-guides/plugin/indent_guides.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-indent-object/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-indent-object/plugin/indent-object.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-indent-object/plugin/indent-object.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-lastplace/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-lastplace/plugin/vim-lastplace.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-lastplace/plugin/vim-lastplace.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-multiple-cursors/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-multiple-cursors/plugin/multiple_cursors.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-multiple-cursors/plugin/multiple_cursors.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-rhubarb/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-rhubarb/plugin/rhubarb.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-rhubarb/plugin/rhubarb.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-snipmate/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-snipmate/plugin/snipMate.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-addon-mw-utils/autoload)
+fchdir() to previous dir
+line 20: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-addon-mw-utils/autoload/funcref.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-addon-mw-utils/autoload/funcref.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/vim-snipmate/plugin/snipMate.vim
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-snipmate/plugin/snipMate.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-snippets/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-snippets/plugin/vimsnippets.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-snippets/plugin/vimsnippets.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-surround/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-surround/plugin/surround.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-surround/plugin/surround.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-yankstack/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-yankstack/plugin/yankstack.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-yankstack/autoload)
+fchdir() to previous dir
+line 1: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-yankstack/autoload/yankstack.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-yankstack/autoload/yankstack.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/vim-yankstack/plugin/yankstack.vim
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-yankstack/plugin/yankstack.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-zenroom2/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-zenroom2/plugin/zenroom2.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-zenroom2/plugin/zenroom2.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_forked/set_tabline/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_forked/set_tabline/plugin/set_tabline.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_forked/set_tabline/plugin/set_tabline.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_forked/vim-peepopen/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_forked/vim-peepopen/plugin/peepopen.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_forked/vim-peepopen/plugin/peepopen.vim
+chdir(/Users/dowonkim/.vim/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim/plugin/taglist.vim"
+finished sourcing /Users/dowonkim/.vim/plugin/taglist.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/getscriptPlugin.vim"
+finished sourcing /usr/share/vim/vim90/plugin/getscriptPlugin.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/gzip.vim"
+finished sourcing /usr/share/vim/vim90/plugin/gzip.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/logiPat.vim"
+finished sourcing /usr/share/vim/vim90/plugin/logiPat.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/manpager.vim"
+finished sourcing /usr/share/vim/vim90/plugin/manpager.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/matchparen.vim"
+finished sourcing /usr/share/vim/vim90/plugin/matchparen.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/netrwPlugin.vim"
+finished sourcing /usr/share/vim/vim90/plugin/netrwPlugin.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/rrhelper.vim"
+finished sourcing /usr/share/vim/vim90/plugin/rrhelper.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/spellfile.vim"
+finished sourcing /usr/share/vim/vim90/plugin/spellfile.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/tarPlugin.vim"
+finished sourcing /usr/share/vim/vim90/plugin/tarPlugin.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/tohtml.vim"
+finished sourcing /usr/share/vim/vim90/plugin/tohtml.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/vimballPlugin.vim"
+finished sourcing /usr/share/vim/vim90/plugin/vimballPlugin.vim
+chdir(/usr/share/vim/vim90/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim90/plugin/zipPlugin.vim"
+finished sourcing /usr/share/vim/vim90/plugin/zipPlugin.vim
+chdir(/Users/dowonkim/.vim/pack/kite/start)
+fchdir() to previous dir
+chdir(/Users/dowonkim/.vim/pack/kite/start/vim-plugin/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim/pack/kite/start/vim-plugin/plugin/kite.vim"
+chdir(/usr/share/vim/vim90)
+fchdir() to previous dir
+line 21: sourcing "/usr/share/vim/vim90/filetype.vim"
+finished sourcing /usr/share/vim/vim90/filetype.vim
+continuing in /Users/dowonkim/.vim/pack/kite/start/vim-plugin/plugin/kite.vim
+finished sourcing /Users/dowonkim/.vim/pack/kite/start/vim-plugin/plugin/kite.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-snipmate/after/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-snipmate/after/plugin/snipMate.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-snipmate/after/plugin/snipMate.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/tabular/after/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/tabular/after/plugin/TabularMaps.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/tabular/autoload)
+fchdir() to previous dir
+line 5: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/tabular/autoload/tabular.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/tabular/autoload/tabular.vim
+continuing in <SNR>73_ParsePattern
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/tabular/after/plugin/TabularMaps.vim
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/dracula/after/plugin)
+fchdir() to previous dir
+sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/dracula/after/plugin/dracula.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/dracula/autoload)
+fchdir() to previous dir
+line 1: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/dracula/autoload/dracula.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/dracula/autoload/dracula.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/dracula/after/plugin/dracula.vim
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/dracula/after/plugin/dracula.vim
+Reading viminfo file "/Users/dowonkim/.viminfo" info oldfiles
+Executing BufWinEnter Autocommands for "*"
+autocommand cal s:record(expand('<abuf>', 1))
+
+Executing BufWinEnter Autocommands for "*"
+autocommand call s:lastplace()
+
+Executing BufWinEnter Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing BufEnter Autocommands for "*"
+autocommand checktime
+
+Executing BufEnter Autocommands for "*"
+autocommand call ale#events#ReadOrEnterEvent(str2nr(expand('<abuf>')))
+
+Executing BufEnter Autocommands for "*"
+autocommand :call AutoPairsTryInit()
+
+Executing BufEnter Autocommands for "*"
+autocommand call lightline#update()
+
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload)
+fchdir() to previous dir
+line 0: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline.vim
+continuing in BufEnter Autocommands for "*"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline)
+fchdir() to previous dir
+line 37: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline/tab.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline/tab.vim
+continuing in lightline#init
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline/colorscheme)
+fchdir() to previous dir
+line 2: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline/colorscheme/wombat.vim"
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline)
+fchdir() to previous dir
+line 40: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline/colorscheme.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline/colorscheme.vim
+continuing in /Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline/colorscheme/wombat.vim
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/lightline.vim/autoload/lightline/colorscheme/wombat.vim
+continuing in lightline#colorscheme
+Executing BufEnter Autocommands for "*"
+autocommand call nerdtree#checkForBrowse(expand('<amatch>'))
+
+Executing BufEnter Autocommands for "*"
+autocommand call s:on_bufenter()
+
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/autoload)
+fchdir() to previous dir
+line 1: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/autoload/gitgutter.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/vim-gitgutter/autoload/gitgutter.vim
+continuing in <SNR>81_on_bufenter
+Executing BufEnter Autocommands for "*"
+autocommand call indent_guides#process_autocmds()
+
+Executing BufEnter Autocommands for "*"
+autocommand if expand('%') ==# '' && &previewwindow && pumvisible() && getbufvar('#', '&omnifunc') ==# 'rhubarb#omnifunc' |    setlocal nolist linebreak filetype=markdown | endif
+
+Executing BufEnter Autocommands for "*"
+autocommand sil call s:LocalBrowse(expand("<amatch>"))
+
+Executing BufEnter Autocommands for "*"
+autocommand call kite#bufenter()
+
+chdir(/Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload)
+fchdir() to previous dir
+line 0: sourcing "/Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite.vim"
+chdir(/Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite)
+fchdir() to previous dir
+line 5: sourcing "/Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite/utils.vim"
+finished sourcing /Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite/utils.vim
+continuing in /Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite.vim
+finished sourcing /Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite.vim
+continuing in BufEnter Autocommands for "*"
+chdir(/Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite)
+fchdir() to previous dir
+line 1: sourcing "/Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite/languages.vim"
+finished sourcing /Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite/languages.vim
+continuing in kite#bufenter
+Executing VimEnter Autocommands for "*"
+autocommand if !exists("no_buffers_menu") | call <SID>BMShow() | endif
+
+autocommand au! LoadBufferMenu
+
+Executing VimEnter Autocommands for "*"
+autocommand call s:Setup()
+
+Executing VimEnter Autocommands for "*"
+autocommand silent! autocmd! FileExplorer
+
+autocommand call nerdtree#checkForBrowse(expand('<amatch>'))
+
+Executing VimEnter Autocommands for "*"
+autocommand if winnr() != winnr('$') | call gitgutter#all(0) | endif
+
+Executing VimEnter Autocommands for "*"
+autocommand call s:Tlist_Window_Check_Auto_Open()
+
+Executing FuncUndefined Autocommands for "*99_Tlist_*"
+autocommand source /Users/dowonkim/.vim/plugin/taglist.vim
+
+chdir(/Users/dowonkim/.vim/plugin)
+fchdir() to previous dir
+line 0: sourcing "/Users/dowonkim/.vim/plugin/taglist.vim"
+finished sourcing /Users/dowonkim/.vim/plugin/taglist.vim
+continuing in FuncUndefined Autocommands for "*99_Tlist_*"
+Executing FuncUndefined Autocommands for "*99_Tlist_Window_*"
+autocommand source /Users/dowonkim/.vim/plugin/taglist.vim
+
+chdir(/Users/dowonkim/.vim/plugin)
+fchdir() to previous dir
+line 0: sourcing "/Users/dowonkim/.vim/plugin/taglist.vim"
+finished sourcing /Users/dowonkim/.vim/plugin/taglist.vim
+continuing in FuncUndefined Autocommands for "*99_Tlist_Window_*"
+Executing VimEnter Autocommands for "*"
+autocommand if g:kite_completions | call kite#configure_completeopt() | endif
+
+  completeopt=menu,preview
+autocommand if kite#utils#kite_running() && &filetype !~# '^git' | call kite#onboarding#call(0) | endif
+
+chdir(/Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite)
+fchdir() to previous dir
+line 10: sourcing "/Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite/async.vim"
+finished sourcing /Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite/async.vim
+continuing in kite#utils#kite_running
+chdir(/Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite)
+fchdir() to previous dir
+line 0: sourcing "/Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite/onboarding.vim"
+finished sourcing /Users/dowonkim/.vim/pack/kite/start/vim-plugin/autoload/kite/onboarding.vim
+continuing in VimEnter Autocommands for "*"
+Executing CursorMoved Autocommands for "*"
+autocommand if exists('*ale#engine#Cleanup') | call ale#cursor#EchoCursorWarningWithDelay() | endif
+
+Executing CursorMoved Autocommands for "*"
+autocommand execute ''
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+
+Executing QuitPre Autocommands for "*"
+autocommand call ale#events#QuitEvent(str2nr(expand('<abuf>')))
+
+Executing BufWinLeave Autocommands for "*"
+autocommand cal s:record(expand('<abuf>', 1))
+
+Executing VimLeavePre Autocommands for "*"
+autocommand cal s:savetofile(s:mergelists())
+
+chdir(/Users/dowonkim/.vim_runtime/sources_non_forked/ctrlp.vim/autoload/ctrlp)
+fchdir() to previous dir
+line 2: sourcing "/Users/dowonkim/.vim_runtime/sources_non_forked/ctrlp.vim/autoload/ctrlp/utils.vim"
+finished sourcing /Users/dowonkim/.vim_runtime/sources_non_forked/ctrlp.vim/autoload/ctrlp/utils.vim
+continuing in ctrlp#mrufiles#cachefile
+Writing viminfo file "/Users/dowonkim/.viminfo"

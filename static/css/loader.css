@@ -1,0 +1,63 @@
+/* 로딩 스피너 스타일 */
+.spinner {
+    border: 4px solid #f3f3f3; /* 연한 회색 */
+    border-top: 4px solid #3498db; /* 파란색 */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.api-result {
+    margin-bottom: 20px;
+}
+
+.loader {
+	 width: 500px;
+	 height: 500px;
+	 opacity: 90%;
+	 z-index: 10;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+}
+ .loader span {
+	 width: 100%;
+	 height: 100%;
+	 display: block;
+	 /*background: rgba(64, 219, 229, .2);
+	 background-image: radial-gradient(rgba(64, 219, 229, .2), rgba(64, 219, 229, .4));*/
+	 background: rgba(13, 110, 253, .2);
+	 background-image: radial-gradient(rgba(13, 110, 253, .2), rgba(13, 110, 253, .4));
+	 position: absolute;
+	 float: left;
+	 border-radius: 100%;
+	 transform: scale(0);
+	 animation: pump 3s ease-out infinite;
+}
+
+.display-none { 
+	display: none;
+}
+
+ .loader span:nth-child(even) {
+	 animamtion-direction: reversed;
+}
+ .loader span:nth-child(1) {
+	 animation-delay: 2s;
+}
+ .loader span:nth-child(2) {
+	 animation-delay: 4s;
+}
+ @keyframes pump {
+	 66% {
+			 transform: scale(1.25);
+	}
+}

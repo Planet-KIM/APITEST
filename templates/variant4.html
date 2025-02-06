@@ -1,0 +1,337 @@
+<!-- templates/variant.html -->
+{% extends "base.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tooltip.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="main-body">
+    <!-- 기존 폼은 그대로 유지 -->
+    <!-- ... -->
+    <form class="" style="margin-left: 50px; margin-right: 50px; margin-bottom: 20px;" method='post'>
+        <div style="width: 100%; padding-top: 50px;">
+          <h3>Variant</h3>
+          <h7>Annotate the variants</h7>
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" style="margin-bottom: 10px; margin-top: 10px;">
+            <input type="checkbox" class="btn-check" id="btncheck_hg19" name="btncheck_hg19" autocomplete="off" value="true">
+            <label class="btn btn-outline-primary" for="btncheck_hg19">LiftOver the input coordinate from hg19 to hg38</label>
+        </div>
+
+        <div class="input-group mb-3">
+            <input class="form-control" id="search" type="search" name="variant" placeholder="Variants, rsID, HGVS" aria-label="Search" aria-describedby="btn-submit" onkeypress="javascript:if(event.keyCode == 13){formCheck()}">
+            <button class="btn btn-outline-success" id="btn-submit" type="submit" onclick="formCheck()">Search</button>
+            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Examples <span class="caret"></span>
+            </button>
+              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  {% for item in user_variant %}
+                  <li><a class="dropdown-item" style="padding: 0px; margin: 5px; background: none; color: #000; text-transform: none;" onclick="insert_Into_search();">{{ item }}</a></li>
+                  {% endfor %}
+                  <li class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" onclick="openWindow()">Guide</a></li>
+              </ul>
+        </div>
+
+        <!-- Variant API Selector-->
+        <form class="api-group btns" role="group" aria-label="Basic checkbox toggle button group" method='post'>
+            {% for item in apis["API"] %}
+                {% if '-non' not in item['Id'] %}
+                    {% if 'asoamenable' in item['Id'] %}
+                    <!-- -->
+                    <input type="checkbox" class="btn-check" id="{{ item['Id'] }}" name="apis" value="{{ item['Route'] }}" onclick="apiToggle();">
+                    <label class="btn btn-outline-primary btn-style" for="{{ item['Id'] }}">{{ item['Text'] }}
+                        <div id="opt_btn" class="option-btn btn-tooltip">
+                            <div class="btn-opt">
+                                    <p>■ Experimental evidence of complete loss of protein-coding function</p>
+                                    <label class="clf-no-btn">
+                                        <input type="radio" name="options-{{ item['Route'] }}-clf" value=true checked> No or unknown
+                                    </label>
+                                    <label class="clf-yes-btn">
+                                            <input type="radio" name="options-{{ item['Route'] }}-clf" value=false> Yes
+                                    </label>
+                            </div>
+                            <div class="btn-opt">
+                                <p>■ Experimental evidence of a splice site gain</p>
+                                <label class="ssg-no-btn">
+                                        <input type="radio" name="options-{{ item['Route'] }}-ssg" value=true checked> No or unknown
+                                </label>
+                                <label class="ssg-yes-btn">
+                                        <input type="radio" name="options-{{ item['Route'] }}-ssg" value=false> Yes
+                                </label>
+                            </div>
+                        </div>
+                    </label>
+                    
+                    {% else %}
+                        {% if 'special' in item['Id'] %}
+                            <!-- -->
+                            <input type="checkbox" class="btn-check" id="{{ item['Id'] }}" name="apis" value="{{ item['Route'] }}" onclick="apiToggle();">
+                            <label class="btn btn-outline-primary btn-style" for="{{ item['Id'] }}" style="display: none;">{{ item['Text'] }}</label>
+                        {% else %}
+                            <!-- -->
+                            <input type="checkbox" class="btn-check" id="{{ item['Id'] }}" name="apis" value="{{ item['Route'] }}" onclick="apiToggle();" checked>
+                            <label class="btn btn-outline-primary btn-style" for="{{ item['Id'] }}" style="display: none;">{{ item['Text'] }}</label>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </form>
+    </form>
+</div>
+
+<!-- 결과를 표시하는 영역 -->
+<div id="results">
+    <!-- 각 API의 결과 카드가 동적으로 추가됩니다 -->
+</div>
+{% endblock %}
+
+{% block javascript1 %}
+    {% if variant %}
+    <script>
+        var variant = {{ variant|tojson }};
+        var api_selection = {{ api_selection|tojson }};
+        var options = {{ options|tojson }};
+
+        const apiList = api_selection.split(',');
+        console.log(apiList);
+
+        // 결과 영역에 각 API에 대한 플레이스홀더와 로딩 인디케이터를 초기화합니다.
+        const resultsDiv = document.getElementById('results');
+
+        apiList.forEach(function(api) {
+            let apiDiv = document.createElement('div');
+            apiDiv.id = 'api-' + api;
+        
+            if (api === 'split2vcf') {
+                // split2vcf에 대한 특별한 HTML 구조 생성
+                apiDiv.innerHTML = `
+                    <div class="card" style="margin-left: 50px; margin-right: 50px; margin-bottom:20px">
+                        <div class="card-header">
+                            <span>${api} API</span>
+                            <button class="btn btn-primary btn-sm" id="btn-toggle" style="position:absolute; right: 5px; padding: 1px 5px;" onclick="openCloseDiv('chart_body_ensembl', 'toggle_text');">
+                                <span class="toggle-text" id="toggle_text">-</span>
+                            </button>
+                        </div>
+                        <div class="chart-body" id="chart_body_ensembl" style="display: block; padding:10px;">
+                            <div class="spinner"></div><span> 진행 중...</span>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-left: 50px; margin-right: 50px; margin-bottom:20px">
+                        <div class="card-header">
+                            <span>${api} API</span>
+                            <button class="btn btn-primary btn-sm" id="btn-toggle" style="position:absolute; right: 5px; padding: 1px 5px;" onclick="openCloseDiv('chart_body_refseq', 'toggle_text');">
+                                <span class="toggle-text" id="toggle_text-${api}">-</span>
+                            </button>
+                        </div>
+                        <div class="chart-body" id="chart_body_refseq" style="display: block; padding:10px;">
+                            <div class="spinner"></div><span> 진행 중...</span>
+                        </div>
+                    </div>
+                `;
+            } else if (api === 'spliceai' || api === 'maxentscan') {
+                // spliceai와 maxentscan에 대한 특별한 HTML 구조 생성
+                apiDiv.innerHTML = `
+                    <div class="card" style="margin-left: 50px; margin-right: 50px; margin-bottom: 50px;">
+                        <div class="card-header">
+                            <span style="margin-left: 10px">${api}</span>
+                            <hr>
+                            ${api === 'spliceai' ? `
+                                <h6 style="margin-left: 10px; margin-top: 10px;"> SpliceAI Link:</h6>
+                                <p style="margin-left: 10px; margin-top: 5px;" id="ucsc-link"></p>
+                            ` : ''}
+                            <button class="btn btn-primary btn-sm" id="btn-toggle" style="position:absolute; right: 5px; padding: 1px 5px;" onclick="openCloseDiv('nav-tabContent-${api}', 'toggle_text_${api}');">
+                                <span class="toggle-text" id="toggle_text_${api}">-</span>
+                            </button>
+                            <hr>
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab-${api}" role="tablist">
+                                    <button class="nav-link active" id="nav-strand-${api}-plus" data-bs-toggle="tab" data-bs-target="#chart_body_${api}_plus" type="button" role="tab" aria-controls="chart_body_${api}_plus" aria-selected="true">Strand(+)</button>
+                                    <button class="nav-link" id="nav-strand-${api}-minus" data-bs-toggle="tab" data-bs-target="#chart_body_${api}_minus" type="button" role="tab" aria-controls="chart_body_${api}_minus" aria-selected="false">Strand(-)</button>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="tab-content" id="nav-tabContent-${api}" style="display: block; padding: 10px;">
+                            <div class="tab-pane fade show active chart-body" id="chart_body_${api}_plus" role="tabpanel" aria-labelledby="nav-strand-${api}-plus">
+                                <div class="spinner"></div><span> 진행 중...</span>
+                            </div>
+                            <div class="tab-pane fade chart-body" id="chart_body_${api}_minus" role="tabpanel" aria-labelledby="nav-strand-${api}-minus">
+                                <div class="spinner"></div><span> 진행 중...</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (api === 'asoamenable') {
+                // asoamenable에 대한 특별한 HTML 구조 생성
+                apiDiv.innerHTML = `
+                    <div class="card" style="margin-left: 50px; margin-right: 50px; margin-bottom: 50px;">
+                        <div class="card-header">
+                            <span style="margin-left: 10px">${api}</span>
+                            <button class="btn btn-primary btn-sm" id="btn-toggle" style="position:absolute; right: 5px; padding: 1px 5px;" onclick="openCloseDiv('nav-tabContent-${api}', 'toggle_text_${api}');">
+                                <span class="toggle-text" id="toggle_text_${api}">-</span>
+                            </button>
+                            <hr>
+                            <!-- 버튼 그룹 -->
+                            <button class="btn btn-primary btn-sm" id="option-toggle" onclick="openCloseDiv('opts_btn', 'option_toggle_text');">Options 
+                                (<span class="toggle-text" id="option_toggle_text">-</span>)
+                            </button>
+                            <button class="btn btn-primary btn-sm" id="flowchart-toggle" onclick="openCloseDiv('flowchart_btn', 'flowchart_toggle_text');">Flow-Chart
+                                (<span class="toggle-text" id="flowchart_toggle_text">-</span>)
+                            </button>
+                            <button class="btn btn-primary btn-sm" id="paper-toggle" onclick="openCloseDiv('paper_btn', 'paper_toggle_text');">Paper
+                                (<span class="toggle-text" id="paper_toggle_text">-</span>)
+                            </button>
+                            <!-- 버튼 그룹 끝 -->
+                            <hr>
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab-${api}" role="tablist">
+                                    <button class="nav-link active" id="nav-${api}-strand-plus" data-bs-toggle="tab" data-bs-target="#chart_body_${api}_plus" type="button" role="tab" aria-controls="chart_body_${api}_plus" aria-selected="true">Strand(+)</button>
+                                    <button class="nav-link" id="nav-${api}-strand-minus" data-bs-toggle="tab" data-bs-target="#chart_body_${api}_minus" type="button" role="tab" aria-controls="chart_body_${api}_minus" aria-selected="false">Strand(-)</button>
+                                </div>
+                            </nav>
+                            <!-- 옵션 폼 -->
+                            <form id="opts_btn" class="option-btn" style="display: none; margin-top: 10px; padding: 20px;">
+                                <div class="clf-btn">
+                                    <h6>■ Experimental evidence of complete loss of protein-coding function</h6>
+                                    <label class="clf-no-btn">
+                                        <input type="radio" name="options-clf" id="clf-no" autocomplete="off" checked> No or unknown
+                                    </label>
+                                    <label class="clf-yes-btn">
+                                        <input type="radio" name="options-clf" id="clf-yes" autocomplete="off"> Yes
+                                    </label>
+                                </div>
+                                <div class="ssg-btn">
+                                    <h6>■ Experimental evidence of a splice site gain</h6>
+                                    <label class="ssg-no-btn">
+                                        <input type="radio" name="options-ssg" id="ssg-no" autocomplete="off" checked> No or unknown
+                                    </label>
+                                    <label class="ssg-yes-btn">
+                                        <input type="radio" name="options-ssg" id="ssg-yes" autocomplete="off"> Yes
+                                    </label>
+                                </div>
+                            </form>
+                            <!-- Flowchart 및 Paper 섹션 -->
+                            <div id="flowchart_btn" class="flowchart-btn" style="display: none;">
+                                <img src="/static/img/ASO_amenability.png" style="width: 100%; padding: 10px;"/>
+                            </div>
+                            <div id="paper_btn" class="paper-btn" style="padding: 20px; display: none;">
+                                <!-- 필요한 콘텐츠 추가--> 
+                                {% for key, values in criteria.items() %}
+                                   <h5>{{ key }}</h5>
+                                   {% for value in values %}
+                                   <ul>
+                                       <li><h6>{{ value["name"] }}</h6>
+                                            <ol>
+                                            {% for item in value["conditions"] %}
+                                                <li id="{{ item['li_id'] }}" style="font-size: 10pt;">
+                                                        {{ item["text"] }}
+                                                </li>
+                                            {% endfor %}
+                                            </ol>
+                                       </li>
+                                   </ul>
+                                   {% endfor %}
+                               {% endfor %}
+                            </div>
+                        </div>
+                        <div class="tab-content" id="nav-tabContent-${api}">
+                            <div class="tab-pane fade show active chart-body" id="chart_body_${api}_plus" role="tabpanel" aria-labelledby="nav-${api}-strand-plus">
+                                <div class="chart-body" id="chart_body_${api}_result_plus" style="display: block; padding: 10px;">
+                                    <div class="spinner"></div><span> 진행 중...</span>
+                                </div>
+                                <div class="chart-body" id="chart_body_${api}_detail_plus" style="display: block; padding: 10px;"></div>
+                            </div>
+                            <div class="tab-pane fade chart-body" id="chart_body_${api}_minus" role="tabpanel" aria-labelledby="nav-${api}-strand-minus">
+                                <div class="chart-body" id="chart_body_${api}_result_minus" style="display: block; padding: 10px;">
+                                    <div class="spinner"></div><span> 진행 중...</span>
+                                </div>
+                                <div class="chart-body" id="chart_body_${api}_detail_minus" style="display: block; padding: 10px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // 일반적인 카드 구조 생성
+                apiDiv.innerHTML = `
+                    <div class="card" style="margin-left: 50px; margin-right: 50px; margin-bottom:20px">
+                        <div class="card-header">
+                            <span>${api} API</span>
+                            <button class="btn btn-primary btn-sm" id="btn-toggle" style="position:absolute; right: 5px; padding: 1px 5px;" onclick="openCloseDiv('chart_body_${api}', 'toggle_text_${api}');">
+                                <span class="toggle-text" id="toggle_text_${api}">-</span>
+                            </button>
+                        </div>
+                        <div class="chart-body" id="chart_body_${api}" style="display: block; padding:10px;">
+                            <div class="spinner"></div><span> 진행 중...</span>
+                        </div>
+                    </div>
+                `;
+            }
+        
+            resultsDiv.appendChild(apiDiv);
+        });
+
+        // SSE 연결 시작
+        const encodedVariant = encodeURIComponent(variant);
+        const encodedApis = encodeURIComponent(api_selection);
+        const encodedOptions = encodeURIComponent(options);
+
+        const eventSource = new EventSource(`/stream?variant=${encodedVariant}&apis=${encodedApis}&options=${encodedOptions}`);
+
+        eventSource.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            const api = data.route;
+            const response = data.response;
+            console.log(response)
+
+            // 로딩 인디케이터 제거
+            const cardBody = document.getElementById('chart_body_' + api);
+            if (cardBody) {
+                cardBody.innerHTML = '';
+            }
+
+            // cardid와 convid 설정
+            let cardid, convid;
+            if (api === 'split2vcf') {
+                cardid = "#chart_body_ensembl,#chart_body_refseq";
+                convid = "#convtable_ensembl,#convtable_refseq";
+            } else if (api === 'spliceai' || api === 'maxentscan') {
+                console.log(Object.keys(response["resources"]));
+                cardid = "#chart_body_" + api + "_plus,#chart_body_" + api + "_minus";
+                convid = "#convtable_" + api + "_plus,#convtable_" + api + "_minus";
+            } else if (api === 'asoamenable') {
+                cardid = "#chart_body_" + api + "_result_plus,#chart_body_" + api + "_detail_plus,#chart_body_" + api + "_result_minus,#chart_body_" + api + "_detail_minus";
+                convid = "#convtable_" + api + "_result_plus,#convtable_" + api + "_detail_plus,#convtable_" + api + "_result_minus,#convtable_" + api + "_detail_minus";
+            } else {
+                cardid = "#chart_body_" + api;
+                convid = "#convtable_" + api;
+            }
+
+            console.log('cardid:', cardid);
+            console.log('convid:', convid);
+
+            // 해당 API의 처리 함수 호출
+            const funcName = api + '_run';
+            if (typeof window[funcName] === 'function') {
+                window[funcName](response, cardid, convid);
+            } else {
+                console.error('No function found for API:', api);
+                // 기본 처리
+                renderDefault(api, response, cardid);
+            }
+        };
+
+        eventSource.onerror = function(e) {
+            console.error("SSE 연결 오류:", e);
+            eventSource.close();
+        };
+
+        function renderDefault(api, response, cardid) {
+            // 기본적으로 JSON 형태로 결과를 표시
+            document.querySelector(cardid).innerHTML = '<pre>' + JSON.stringify(response, null, 2) + '</pre>';
+        }
+
+    </script>
+    {% endif %}
+{% endblock %}

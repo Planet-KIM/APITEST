@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year Count Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h2>Year Count Chart</h2>
+    <canvas id="yearChart" width="400" height="200"></canvas>
+
+    <script>
+        $(document).ready(function() {
+            // JSON 데이터 로드
+            $.getJSON("./test.json", function(data) {
+                if (data.length === 0) {
+                    alert("No data available");
+                    return;
+                }
+
+                // 연도별 개수를 저장할 객체
+                let yearCounts = {};
+
+                // 데이터를 순회하며 연도별 개수를 세기
+                data.forEach(item => {
+                    let year = item.year;
+                    if (year) {
+                        yearCounts[year] = (yearCounts[year] || 0) + 1;
+                    }
+                });
+
+                // 객체를 배열로 변환하여 정렬 (오름차순)
+                let sortedYears = Object.keys(yearCounts).sort((a, b) => a - b);
+                let counts = sortedYears.map(year => yearCounts[year]);
+
+                // Chart.js 그래프 생성
+                let ctx = document.getElementById("yearChart").getContext("2d");
+                new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: sortedYears, // x축 (연도)
+                        datasets: [{
+                            label: "Publication Count",
+                            data: counts, // y축 (연도별 논문 수)
+                            backgroundColor: "rgba(75, 192, 192, 0.6)",
+                            borderColor: "rgba(75, 192, 192, 1)",
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    stepSize: 1,  // 👈 **y축 눈금을 1 단위로 설정**
+                                    precision: 0  // 👈 **소수점 제거**
+                                }
+                            }
+                        }
+                    }
+                });
+            }).fail(function() {
+                alert("Failed to load data.");
+            });
+        });
+    </script>
+
+</body>
+</html>

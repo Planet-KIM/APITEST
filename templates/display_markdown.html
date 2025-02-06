@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VarSome Input Format Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        pre, code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        /* Initially hide the full content */
+        .full-content {
+            display: none;
+        }
+        .show-more, .show-less {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Preview Content -->
+        <div id="preview-content" style="display: block;">
+            {{ content[:500]|safe }} <!-- First 500 characters for preview -->
+            <span class="show-more" onclick="toggleContent()">Show More</span>
+        </div>
+        <!-- Full Content (initially hidden) -->
+        <div id="full-content" class="full-content" style="display: none;">
+            {{ content|safe }}
+            <span class="show-less" onclick="toggleContent()">Show Less</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent() {
+            const previewContent = document.getElementById('preview-content');
+            const fullContent = document.getElementById('full-content');
+            
+            // Toggle between showing and hiding preview and full content
+            if (fullContent.style.display === 'none') {
+                previewContent.style.display = 'none';
+                fullContent.style.display = 'block';
+            } else {
+                previewContent.style.display = 'block';
+                fullContent.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

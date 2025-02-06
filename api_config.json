@@ -1,0 +1,118 @@
+{
+	"API" :[
+		{
+			"Index" : 0,
+			"Id" : "btn-special-all",
+            "Name" : "all",
+			"Text" : "All",
+			"Route" : "variant"
+		},
+		{
+			"Index" : 0,
+			"Id" : "btn-special-api-vep",
+            "Name" : "vep",
+			"Text" : "Vep",
+			"Route" : "vep"
+		},
+		{
+			"Index" : 1,
+			"Id" : "btn-api-canonical",
+            "Name" : "canonical",
+			"Text" : "canonical",
+			"Route" : "parse2mane"
+		},
+		{
+			"Index" : 2,
+			"Id" : "btn-api-re",
+            "Name" : "re",
+			"Text" : "Refseq or Ensembl",
+			"Route" : "split2vcf"
+		},
+		{
+			"Index" : 3,
+			"Id" : "btn-api-gnomad",
+            "Name" : "gnomad",
+			"Text" : "gnomAD",
+			"Route" : "gnomad"
+		},
+		{
+			"Index" : 4,
+			"Id" : "btn-api-topmed",
+            "Name" : "topmed",
+			"Text" : "TOPMed",
+			"Route" : "topmed"
+		},
+		{
+			"Index" : 5,
+			"Id" : "btn-api-spliceai",
+            "Name" : "spliceai",
+			"Text" : "spliceAI",
+			"Route" : "spliceai"
+		},
+		{
+			"Index" : 6,
+			"Id" : "btn-api-maxentscan",
+            "Name" : "maxentscan",
+			"Text" : "MaxEntScan",
+			"Route" : "maxentscan"
+		},
+		{
+			"Index" : 7,
+			"Id" : "btn-api-hexamer",
+            "Name" : "hexamer",
+			"Text" : "Hexamer",
+			"Route" : "hexamer"
+		},
+		{
+			"Index" : 8,
+			"Id" : "btn-api-labranchor",
+            "Name" : "labranchor",
+			"Text" : "LaBranchoR",
+			"Route" : "labranchor"
+		},
+		{
+			"Index" : 9,
+			"Id" : "btn-api-5prime",
+            "Name" : "optimus5prime_loc",
+			"Text" : "Optimus 5prime locus",
+			"Route" : "prime5_loc"
+		},
+		{
+			"Index" : 10,
+			"Id" : "btn-api-annotator",
+            "Name" : "utrannotator",
+			"Text" : "UTR Annotator",
+			"Route" : "utrannotator"
+		},
+		{
+			"Index" : 11,
+			"Id" : "btn-api-litvar",
+            "Name" : "litvar",
+			"Text" : "LitVar",
+			"Route" : "litvar"
+		},
+		{
+			"Index" : 12,
+			"Id" : "btn-special-api-asoamenable",
+            "Name" : "asoamenable",
+			"Text" : "ASO amenability",
+			"Route" : "asoamenable"
+		},
+		{
+			"Index" : 13,
+			"Id" : "btn-api-5prime-non",
+            "Name" : "optimus5prime_seq",
+			"Text" : "Optimus 5prime sequence",
+			"Route" : "prime5"
+		},
+		{
+			"Index" : 14,
+			"Id" : "btn-api-seqconverter-non",
+            "Name" : "seq_converter",
+			"Text" : "Sequence Converter",
+			"Route" : "seq_converter"
+		}
+
+	]
+}
+

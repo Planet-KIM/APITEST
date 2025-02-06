@@ -1,0 +1,14 @@
+.api-group {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-style {
+    width: auto;
+    font-size: 11px;
+    font-family: sans-serif;
+    height: 25px;
+    padding: 5px 8px 5px 8px;
+    margin: 4px;
+    border-radius: 35px;
+}
