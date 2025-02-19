@@ -1,0 +1,15 @@
+{
+  "name": "my-js-project",
+  "version": "1.0.0",
+  "description": "A JavaScript project that includes modules for parsing, error handling, and utility functions.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}

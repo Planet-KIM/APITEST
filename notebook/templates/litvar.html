@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>LitVar Query</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>LitVar Query</h1>
+        <!-- seq 입력 폼 -->
+        <form id="seqForm" method="GET" action="/">
+            <div class="mb-3">
+                <label for="seqInput" class="form-label">Sequence:</label>
+                <input type="text" class="form-control" id="seqInput" name="seq" 
+                       placeholder="예: chr1:925952-925952 G>A" value="{{ request.args.get('seq', '') }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        
+        <!-- 결과가 나타날 영역 -->
+        <div id="resultsSection">
+            {% if results %}
+
+                <!-- 서버에서 전달받은 결과를 안전하게 JavaScript 변수에 할당 -->
+                <script>
+                    var resultsData = {{ results | tojson }};
+                </script>
+                <!-- 결과 UI를 동적으로 생성할 영역 (JavaScript에서 #app에 UI 구성) -->
+            {% endif %}
+            <div id="app"></div>
+            <div id="app1"></div>
+        </div>
+    </div>
+    
+    <!-- JavaScript 라이브러리 로드 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <!-- 외부 JavaScript 파일 (예: litvar_re.js) -->
+    <script src="{{ url_for('static', filename='js/litvar_re.js') }}"></script>
+    
+    <!-- 페이지 로드시, 결과 데이터가 있을 경우 UI를 구성 -->
+    <script>
+        $(document).ready(function(){
+            if (typeof resultsData !== 'undefined' && resultsData.length > 0) {
+                setupUI(app="app");  // UI 기본 구조 생성
+                let yearCounts = countYears(resultsData);
+                createChart(yearCounts);
+                createTable(resultsData);
+                setupUI(app="app1");  // UI 기본 구조 생성
+                let yearCounts1 = countYears(resultsData);
+                createChart(yearCounts1);
+                createTable(resultsData);
+            }
+        });
+    </script>
+</body>
+</html>
